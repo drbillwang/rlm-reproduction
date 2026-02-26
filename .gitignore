@@ -1,0 +1,63 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environment
+venv/
+.venv/
+ENV/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# API Keys
+.env
+*.key
+
+# Results (大文件)
+*.json
+results/
+logs/
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# PDF
+*.pdf
+
+# Word
+*.docx
+
+# Keep these (不要忽略重要文件)
+!.env.template
+!report.pdf
+
+# Local notes / course scaffolding (do not push)
+knowledge/
+instruction.md
+project.csv
