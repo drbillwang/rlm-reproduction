@@ -1,124 +1,132 @@
-# RLM 实验脚本
+# RLM experiment scripts
 
-本文件夹包含复现 RLM 论文实验的脚本，使用 RULER 和 OOLONG 两个基准数据集。
+This folder contains the scripts I use to reproduce key RLM experiments on
+RULER (S-NIAH) and OOLONG (trec_coarse).
 
-## 实验设计（按论文要求）
+## Experiment design (following the paper)
+
+### Research question
+
+> Does the RLM framework improve LLM performance on long-context tasks
+> compared to using the same LLM directly?
 
 ### S-NIAH (RULER)
 > "Following the single needle-in-the-haystack task in RULER, we consider a set of 50 single tasks that require finding a specific phrase or number in a large set of unrelated text. Here, the information being sought scales as O(1) with respect to input length."
 
-- **样本数**: 50 samples
-- **任务**: Needle in a Haystack 检索
-- **评估**: 精确匹配
+- **Samples**: 50
+- **Task**: single needle-in-a-haystack retrieval
+- **Metric**: accuracy (exact match of the needle)
 
-### OOLONG
+### OOLONG (trec_coarse)
 > "We focus specifically on the trec_coarse split, a set of 50 tasks over a dataset of questions with semantic labels. Each task requires using nearly all entries of the dataset, and therefore scales linearly in processing complexity relative to the input length."
 
-- **样本数**: 50 tasks
-- **数据集**: trec_coarse split
-- **评估**: 数值答案 `score = 0.75^|y - ŷ|`，其他精确匹配
+- **Samples**: 50
+- **Dataset**: `trec_coarse` split
+- **Metric**:  
+  - Numerical answers: `score = 0.75^|y - ŷ|`  
+  - Others: exact match
 
-### 修改变量
-- `max_depth = 1` (baseline)
-- `max_depth = 2` (modification 1)
-- `max_depth = 3` (modification 2)
+### Three experimental conditions (per dataset)
 
-## 快速开始
+| Condition    | Description |
+|-------------|-------------|
+| **Plain LLM** | Direct single LLM call — no RLM, no REPL, no recursion |
+| **RLM depth=1** | RLM framework with max_depth=1 (REPL + code, but no recursive sub-calls) |
+| **RLM depth=2** | RLM framework with max_depth=2 (allows one level of recursive sub-LLM calls) |
 
-### 1. 安装依赖
+All three conditions use the **same underlying model** (DeepSeek) and the
+**same data / evaluation**, so differences are purely from the RLM framework.
+
+## Quickstart
+
+### 1. Install dependencies
 
 ```bash
-# RLM 依赖
+# RLM (from repo root)
 cd rlm && pip install -e .
 
-# 实验依赖
-pip install datasets python-dotenv
+# Experiment dependencies
+cd ..
+pip install datasets python-dotenv openai
 ```
 
-### 2. 配置 API 密钥
+### 2. Configure API keys
 
 ```bash
 cd experiments
 cp .env.template .env
-# 编辑 .env 文件，填入你的 DeepSeek API 密钥
+# Edit .env and fill DEEPSEEK_API_KEY or OPENAI_API_KEY
 ```
 
-### 3. 运行实验
+### 3. Run experiments
 
 ```bash
-# RULER 实验 (每个约 10-15 分钟)
-python run_ruler_baseline.py   # depth=1 (baseline)
-python run_ruler_depth2.py     # depth=2
-python run_ruler_depth3.py     # depth=3
+# RULER — 3 conditions
+python run_ruler_plain.py      # Plain LLM (no RLM)
+python run_ruler_baseline.py   # RLM depth=1
+python run_ruler_depth2.py     # RLM depth=2
 
-# OOLONG 实验 (每个约 10-15 分钟)
-python run_oolong_depth1.py    # depth=1 (baseline)
-python run_oolong_depth2.py    # depth=2
-python run_oolong_depth3.py    # depth=3
+# OOLONG — 3 conditions
+python run_oolong_plain.py     # Plain LLM (no RLM)
+python run_oolong_depth1.py    # RLM depth=1
+python run_oolong_depth2.py    # RLM depth=2
 
-# 对比结果
+# Compare results
 python compare_results.py
 ```
 
-### 4. 查看结果
+### 4. Outputs
 
-结果保存在 `results/` 文件夹：
+Results are written to the `results/` folder:
+- `ruler_plain_llm_results.json`
 - `ruler_depth1_results.json`
 - `ruler_depth2_results.json`
-- `ruler_depth3_results.json`
+- `oolong_plain_llm_results.json`
 - `oolong_depth1_results.json`
 - `oolong_depth2_results.json`
-- `oolong_depth3_results.json`
 - `comparison_summary.json`
 
-## 文件说明
+## File overview
 
-### 主要实验脚本
+### Main experiment scripts
 
-| 文件 | 说明 |
-|------|------|
-| `run_ruler_experiment.py` | RULER 实验主脚本 |
-| `run_oolong_experiment.py` | OOLONG 实验主脚本 |
-| `compare_results.py` | 结果对比与报告生成 |
+| File | Description |
+|------|-------------|
+| `run_ruler_plain_llm.py` | RULER — plain LLM driver (no RLM) |
+| `run_ruler_experiment.py` | RULER — RLM experiment driver |
+| `run_oolong_plain_llm.py` | OOLONG — plain LLM driver (no RLM) |
+| `run_oolong_experiment.py` | OOLONG — RLM experiment driver |
+| `compare_results.py` | Aggregate and compare all 6 runs |
 
-### 快捷运行脚本
+### Convenience entry points
 
-| 文件 | 说明 |
-|------|------|
-| `run_ruler_baseline.py` | RULER depth=1 (50 samples) |
-| `run_ruler_depth2.py` | RULER depth=2 |
-| `run_ruler_depth3.py` | RULER depth=3 |
-| `run_oolong_depth1.py` | OOLONG depth=1 (trec_coarse, 50 samples) |
-| `run_oolong_depth2.py` | OOLONG depth=2 |
-| `run_oolong_depth3.py` | OOLONG depth=3 |
+| File | Description |
+|------|-------------|
+| `run_ruler_plain.py` | RULER Plain LLM (50 samples) |
+| `run_ruler_baseline.py` | RULER RLM depth=1 |
+| `run_ruler_depth2.py` | RULER RLM depth=2 |
+| `run_oolong_plain.py` | OOLONG Plain LLM (trec_coarse, 50 samples) |
+| `run_oolong_depth1.py` | OOLONG RLM depth=1 |
+| `run_oolong_depth2.py` | OOLONG RLM depth=2 |
 
-## 自定义实验
-
-```bash
-# 自定义参数运行 RULER
-python run_ruler_experiment.py --depth 2 --samples 50 --length 8192
-
-# 自定义参数运行 OOLONG
-python run_oolong_experiment.py --depth 2 --samples 50 --dataset trec_coarse
-```
-
-## 评估指标
+## Metrics
 
 ### RULER S-NIAH
-- **Accuracy**: 精确匹配准确率（找到正确的 needle）
+- **Accuracy**: exact match of the target needle.
 
 ### OOLONG
-- **Numerical**: `score = 0.75^|y - ŷ|`（部分正确）
-- **Others**: 精确匹配
+- **Numerical**: `score = 0.75^|y - ŷ|` (partial credit)
+- **Others**: exact match (1 or 0)
 
-## 预计成本
+## Cost notes
 
-使用 DeepSeek API（约 ¥1/百万 token）：
-- 50 样本 × 6 实验 = 300 次 API 调用
-- 预计成本：¥30-50
+Using DeepSeek API (roughly ¥1 / 1M tokens as a ballpark):
+- 50 samples × 6 experiments ≈ 300 calls
+- Plain LLM experiments are cheapest (single call per sample)
+- RLM depth=2 experiments are most expensive (recursive sub-calls)
 
-## 注意事项
+## Practical notes
 
-1. **API 限流**: 如果遇到限流，可以在脚本中添加 `time.sleep()`
-2. **网络问题**: OOLONG 需要从 HuggingFace 下载数据
-3. **trec_coarse**: 论文指定使用 trec_coarse split
+1. **Rate limits**: if you hit API rate limits, consider adding `time.sleep()` between calls or reducing concurrent runs.  
+2. **Network**: OOLONG is loaded from HuggingFace; make sure your machine can access `datasets` downloads.  
+3. **trec_coarse**: the OOLONG experiments here always restrict to the `trec_coarse` split as in the RLM paper.

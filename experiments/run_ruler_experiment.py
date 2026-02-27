@@ -292,7 +292,7 @@ def run_ruler_rlm_experiment(
     results: list[dict] = []
     total_score = 0.0
     correct_count = 0
-    # For cost / token plots (Figure 3 风格)
+    # For cost / token plots (Figure 3 style)
     total_input_tokens = 0
     total_output_tokens = 0
     total_cost = 0.0
@@ -338,7 +338,7 @@ def run_ruler_rlm_experiment(
             # Token / cost usage (for later cost plots)
             usage_info = {}
             if result.usage_summary and result.usage_summary.model_usage_summaries:
-                # 取第一个模型的统计（这里只有一个 DeepSeek 模型）
+                # Take the first model summary (only one DeepSeek model here)
                 summary = next(iter(result.usage_summary.model_usage_summaries.values()))
                 input_tokens = getattr(summary, "total_input_tokens", 0) or 0
                 output_tokens = getattr(summary, "total_output_tokens", 0) or 0
@@ -366,7 +366,10 @@ def run_ruler_rlm_experiment(
             })
             
         except Exception as e:
+            import traceback
             print(f"ERROR: {e}")
+            print(f"Full traceback:")
+            traceback.print_exc()
             results.append({
                 "sample_id": i,
                 "needle_key": key,

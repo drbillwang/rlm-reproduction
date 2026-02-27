@@ -1,0 +1,4 @@
+Every time you open a new terminal, before running experiments you should:
+
+cd "/Users/DrBil/Desktop/CUHK Mac/FTEC5660/Individual_Project"
+source .venv/bin/activate

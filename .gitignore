@@ -37,7 +37,7 @@ env/
 .env
 *.key
 
-# Results (大文件)
+# Results (potentially large files)
 *.json
 results/
 logs/
@@ -53,11 +53,11 @@ Thumbs.db
 # Word
 *.docx
 
-# Keep these (不要忽略重要文件)
+# Keep these (do not ignore these important files)
 !.env.template
 !report.pdf
 
-# Local notes / course scaffolding (do not push)
+# Local notes / course scaffolding (do not push to GitHub)
 knowledge/
 instruction.md
 project.csv

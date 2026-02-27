@@ -205,7 +205,7 @@ def run_oolong_experiment(
     results: list[dict] = []
     total_score = 0.0
     correct_count = 0
-    # For cost / token analysis (Figure 3 风格)
+    # For cost / token analysis (Figure 3 style)
     total_input_tokens = 0
     total_output_tokens = 0
     total_cost = 0.0
