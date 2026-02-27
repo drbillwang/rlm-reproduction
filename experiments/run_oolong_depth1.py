@@ -15,7 +15,7 @@ from run_oolong_experiment import run_oolong_experiment
 if __name__ == "__main__":
     run_oolong_experiment(
         max_depth=1,
-        num_samples=50,  # Paper uses 50 tasks
+        num_samples=20,
         output_name="oolong_depth1",
         dataset_filter="trec_coarse"  # Paper focuses on trec_coarse split
     )

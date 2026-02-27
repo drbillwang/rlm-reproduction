@@ -28,7 +28,7 @@ from run_ruler_experiment import (
 
 
 def run_ruler_plain_experiment(
-    num_samples: int = 50,
+    num_samples: int = 20,
     max_seq_length: int = 4096,
     output_name: str = "ruler_plain_llm",
 ):
@@ -211,7 +211,7 @@ if __name__ == "__main__":
     import argparse
 
     parser = argparse.ArgumentParser(description="RULER S-NIAH — Plain LLM baseline")
-    parser.add_argument("--samples", type=int, default=50)
+    parser.add_argument("--samples", type=int, default=20)
     parser.add_argument("--length", type=int, default=4096)
     parser.add_argument("--name", type=str, default="ruler_plain_llm")
     args = parser.parse_args()

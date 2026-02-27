@@ -13,14 +13,14 @@ RULER (S-NIAH) and OOLONG (trec_coarse).
 ### S-NIAH (RULER)
 > "Following the single needle-in-the-haystack task in RULER, we consider a set of 50 single tasks that require finding a specific phrase or number in a large set of unrelated text. Here, the information being sought scales as O(1) with respect to input length."
 
-- **Samples**: 50
+- **Samples**: 20 (first 20 samples, for reproducibility)
 - **Task**: single needle-in-a-haystack retrieval
 - **Metric**: accuracy (exact match of the needle)
 
 ### OOLONG (trec_coarse)
 > "We focus specifically on the trec_coarse split, a set of 50 tasks over a dataset of questions with semantic labels. Each task requires using nearly all entries of the dataset, and therefore scales linearly in processing complexity relative to the input length."
 
-- **Samples**: 50
+- **Samples**: 20 (first 20 filtered samples, for reproducibility)
 - **Dataset**: `trec_coarse` split
 - **Metric**:  
   - Numerical answers: `score = 0.75^|y - ŷ|`  
@@ -102,12 +102,12 @@ Results are written to the `results/` folder:
 
 | File | Description |
 |------|-------------|
-| `run_ruler_plain.py` | RULER Plain LLM (50 samples) |
-| `run_ruler_baseline.py` | RULER RLM depth=1 |
-| `run_ruler_depth2.py` | RULER RLM depth=2 |
-| `run_oolong_plain.py` | OOLONG Plain LLM (trec_coarse, 50 samples) |
-| `run_oolong_depth1.py` | OOLONG RLM depth=1 |
-| `run_oolong_depth2.py` | OOLONG RLM depth=2 |
+| `run_ruler_plain.py` | RULER Plain LLM (20 samples) |
+| `run_ruler_baseline.py` | RULER RLM depth=1 (20 samples) |
+| `run_ruler_depth2.py` | RULER RLM depth=2 (20 samples) |
+| `run_oolong_plain.py` | OOLONG Plain LLM (trec_coarse, 20 samples) |
+| `run_oolong_depth1.py` | OOLONG RLM depth=1 (20 samples) |
+| `run_oolong_depth2.py` | OOLONG RLM depth=2 (20 samples) |
 
 ## Metrics
 
@@ -121,7 +121,8 @@ Results are written to the `results/` folder:
 ## Cost notes
 
 Using DeepSeek API (roughly ¥1 / 1M tokens as a ballpark):
-- 50 samples × 6 experiments ≈ 300 calls
+- RULER: 20 samples × 3 experiments
+- OOLONG: 20 samples × 3 experiments
 - Plain LLM experiments are cheapest (single call per sample)
 - RLM depth=2 experiments are most expensive (recursive sub-calls)
 

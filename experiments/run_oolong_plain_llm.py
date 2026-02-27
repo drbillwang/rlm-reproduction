@@ -23,7 +23,7 @@ from run_oolong_experiment import evaluate_oolong_response
 
 
 def run_oolong_plain_experiment(
-    num_samples: int = 50,
+    num_samples: int = 20,
     min_context_len: int = 1024,
     max_context_len: int = 65536,
     output_name: str = "oolong_plain_llm",
@@ -44,7 +44,7 @@ def run_oolong_plain_experiment(
     # --- data ---
     print("Loading OOLONG-synth dataset from HuggingFace...")
     try:
-        dataset = load_dataset("oolongbench/oolong-synth", split="test")
+        dataset = load_dataset("oolongbench/oolong-synth", split="validation")
         print(f"Loaded {len(dataset)} total samples")
     except Exception as e:
         print(f"Error loading dataset: {e}")
@@ -223,7 +223,7 @@ if __name__ == "__main__":
     import argparse
 
     parser = argparse.ArgumentParser(description="OOLONG — Plain LLM baseline")
-    parser.add_argument("--samples", type=int, default=50)
+    parser.add_argument("--samples", type=int, default=20)
     parser.add_argument("--dataset", type=str, default="trec_coarse")
     parser.add_argument("--name", type=str, default="oolong_plain_llm")
     args = parser.parse_args()

@@ -112,7 +112,7 @@ def evaluate_oolong_response(response: str, gold_answer: str, answer_type: str =
 
 def run_oolong_experiment(
     max_depth: int = 1,
-    num_samples: int = 50,  # Paper uses 50 tasks
+    num_samples: int = 20,
     min_context_len: int = 1024,
     max_context_len: int = 65536,
     output_name: str = "oolong_depth1",
@@ -136,7 +136,7 @@ def run_oolong_experiment(
     # Load OOLONG-synth dataset
     print("Loading OOLONG-synth dataset from HuggingFace...")
     try:
-        dataset = load_dataset("oolongbench/oolong-synth", split="test")
+        dataset = load_dataset("oolongbench/oolong-synth", split="validation")
         print(f"Loaded {len(dataset)} total samples")
     except Exception as e:
         print(f"Error loading dataset: {e}")
@@ -338,7 +338,7 @@ if __name__ == "__main__":
     
     parser = argparse.ArgumentParser(description="OOLONG Experiment with RLM")
     parser.add_argument("--depth", type=int, default=1, help="RLM max_depth")
-    parser.add_argument("--samples", type=int, default=50, help="Number of samples (paper uses 50)")
+    parser.add_argument("--samples", type=int, default=20, help="Number of samples")
     parser.add_argument("--dataset", type=str, default="trec_coarse", help="Dataset filter (paper uses trec_coarse)")
     parser.add_argument("--name", type=str, default=None, help="Experiment name")
     args = parser.parse_args()

@@ -224,7 +224,7 @@ def evaluate_ruler_response(response: str, gold_answers: list) -> dict:
 
 def run_ruler_rlm_experiment(
     max_depth: int = 1,
-    num_samples: int = 50,  # Paper uses 50 samples
+    num_samples: int = 20,
     max_seq_length: int = 4096,
     output_name: str = "ruler_depth1"
 ):
@@ -431,7 +431,7 @@ if __name__ == "__main__":
     
     parser = argparse.ArgumentParser(description="RULER S-NIAH Experiment with RLM")
     parser.add_argument("--depth", type=int, default=1, help="RLM max_depth")
-    parser.add_argument("--samples", type=int, default=50, help="Number of samples")
+    parser.add_argument("--samples", type=int, default=20, help="Number of samples")
     parser.add_argument("--length", type=int, default=4096, help="Context length in tokens")
     parser.add_argument("--name", type=str, default=None, help="Experiment name")
     args = parser.parse_args()
