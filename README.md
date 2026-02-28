@@ -18,7 +18,7 @@ This project reproduces and extends the **Recursive Language Models (RLM)** fram
 |-----------|-----------|:---:|:---:|
 | **S-NIAH** | Base LLM | 100.0% | 100.0% |
 | | RLM (depth=1) | 85.0% | 90.0% |
-| | RLM (depth=2) | 70.0% | — |
+| | RLM (depth=2) | 70.0% | 90.0% |
 | **OOLONG** | Base LLM | 0.0% | 86.6% |
 | | RLM (depth=1) | 42.1% | 60.0% |
 | | RLM (depth=2) | 33.7% | 55.0% |
