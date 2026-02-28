@@ -56,6 +56,12 @@ Thumbs.db
 # Keep these (do not ignore these important files)
 !.env.template
 !report.pdf
+!reproduction_report.pdf
+!reproduction_results/
+!reproduction_results/**/*.json
+!reproduction_results/**/*.csv
+!figures/
+!figures/**/*.png
 
 # Local notes / course scaffolding (do not push to GitHub)
 knowledge/

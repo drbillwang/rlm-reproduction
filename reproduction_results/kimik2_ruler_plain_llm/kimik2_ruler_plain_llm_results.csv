@@ -1,0 +1,61 @@
+sample_id,needle_key,gold_answers,llm_response,score,correct,found,execution_time,input_tokens,output_tokens,total_tokens
+0,unknown,"[""2338687""]","The special magic number for harmonious-uniform mentioned in the text is **2338687**.
+
+There are no ""special magic numbers for unknown"" mentioned anywhere in the provided text. The only special magic number explicitly identified is the one for harmonious-uniform (2338687).",1,TRUE,"[""2338687""]",47.83319116,3341,506,3847
+1,unknown,"[""7210606""]","The special magic number for **discreet-commodity** mentioned in the text is: **7210606**
+
+There are **no special magic numbers for unknown** mentioned in the provided text.",1,TRUE,"[""7210606""]",29.24535728,3343,847,4190
+2,unknown,"[""5107245""]","The special magic number for roasted-poetry mentioned in the text is **5107245**.
+
+This is the only special magic number explicitly mentioned in the provided text. There are no other ""special magic numbers"" for any other categories (including ""unknown"") stated in the passage.",1,TRUE,"[""5107245""]",27.06244802,3343,527,3870
+3,unknown,"[""5528972""]","The special magic number for lovely-filter is: **5528972**
+
+There are no special magic numbers for ""unknown"" mentioned in the provided text. The only magic number referenced is 5528972, which is specifically for lovely-filter.",1,TRUE,"[""5528972""]",48.98957372,3917,839,4756
+4,unknown,"[""6440561""]","The special magic number for vague-shear mentioned in the text is **6440561**.
+
+There are no other ""special magic numbers"" mentioned in the provided text. The only magic number referenced is the one for vague-shear (6440561). The text does not contain any special magic numbers for ""unknown"" or any other category.",1,TRUE,"[""6440561""]",44.34132576,3921,552,4473
+5,unknown,"[""4539704""]","The special magic number for berserk-suitcase mentioned in the text is **4539704**.
+
+There are **no special magic numbers for ""unknown""** mentioned in the provided text. The only special magic number referenced is the one for berserk-suitcase (4539704).",1,TRUE,"[""4539704""]",47.14438415,3345,453,3798
+6,unknown,"[""5443951""]","The special magic number for deafening-radish mentioned in the text is **5443951**.
+
+Regarding all special magic numbers for ""unknown"" mentioned in the text: there are **none**. The only special magic number explicitly mentioned in the entire text is 5443951, which is specifically associated with ""deafening-radish"". No other special magic numbers (including any for ""unknown"") appear in the provided text.",1,TRUE,"[""5443951""]",32.4480834,3345,890,4235
+7,unknown,"[""7700828""]","The special magic number for solid-sanction mentioned in the text is **7700828**.
+
+There are no special magic numbers for ""unknown"" mentioned in the provided text. The only magic number referenced is the one for solid-sanction (7700828).",1,TRUE,"[""7700828""]",31.64951396,3343,812,4155
+8,unknown,"[""9548432""]","The special magic number for dark-boyhood mentioned in the text is **9548432**.
+
+This is the only ""special magic number"" explicitly mentioned in the provided text. There are no other special magic numbers for any other categories (including ""unknown"") mentioned.",1,TRUE,"[""9548432""]",34.54927897,3921,740,4661
+9,unknown,"[""2839607""]","The special magic number for annoying-doorbell is **2839607**.
+
+There are no special magic numbers for ""unknown"" mentioned in the provided text. The only special magic number mentioned is the one for annoying-doorbell (2839607).",1,TRUE,"[""2839607""]",34.14275074,3919,694,4613
+10,unknown,"[""8082668""]","The special magic number for used-postfix mentioned in the text is **8082668**.
+
+There are no special magic numbers for ""unknown"" mentioned in the provided text. Only the number for ""used-postfix"" (8082668) appears.",1,TRUE,"[""8082668""]",20.57948303,3919,583,4502
+11,unknown,"[""7402509""]","The special magic number for lush-tornado mentioned in the text is **7402509**.
+
+There are no other ""special magic numbers"" mentioned in the provided text - only this single number appears with that specific phrasing.",1,TRUE,"[""7402509""]",29.46559024,3919,592,4511
+12,unknown,"[""5218028""]","The special magic number for rhetorical-industry mentioned in the text is **5218028**.
+
+There are **no special magic numbers for unknown** mentioned in the provided text. The only special magic number referenced is the one for rhetorical-industry (5218028).",1,TRUE,"[""5218028""]",20.83045745,3921,717,4638
+13,unknown,"[""2921859""]","The special magic number for used-hound is: **2921859**
+
+There are **no special magic numbers for unknown** mentioned in the provided text. The only special magic number referenced is the one for used-hound (2921859).",1,TRUE,"[""2921859""]",31.96446157,3919,751,4670
+14,unknown,"[""6707197""]","The special magic number for tested-shout mentioned in the text is **6707197**.
+
+There are no other special magic numbers mentioned in the provided text. The only special magic number referenced is the one for tested-shout (6707197). No numbers are mentioned for ""unknown"" or any other categories.",1,TRUE,"[""6707197""]",36.80953526,3919,392,4311
+15,unknown,"[""5418934""]","The special magic number for **workable-chateau** mentioned in the text is: **5418934**
+
+There are **no special magic numbers for unknown** mentioned in the provided text. The only special magic number referenced is the one for workable-chateau (5418934).",1,TRUE,"[""5418934""]",35.57136035,3341,649,3990
+16,unknown,"[""2785277""]","The special magic number for quick-vane mentioned in the text is **2785277**.
+
+This is the only magic number explicitly mentioned in the provided text. There are no ""special magic numbers for unknown"" mentioned—the text only references this single number for quick-vane.",1,TRUE,"[""2785277""]",46.61361456,3919,663,4582
+17,unknown,"[""6438436""]","The special magic number for stale-spaghetti mentioned in the text is **6438436**.
+
+There are **no special magic numbers for unknown** mentioned in the provided text. The only magic number referenced is the one for stale-spaghetti (6438436).",1,TRUE,"[""6438436""]",30.99919319,3341,649,3990
+18,unknown,"[""7089806""]","The special magic number for colossal-friend mentioned in the text is **7089806**.
+
+There are no other ""special magic numbers"" mentioned in the provided text. The only one explicitly labeled as such is 7089806 for colossal-friend.",1,TRUE,"[""7089806""]",23.06781268,3921,504,4425
+19,unknown,"[""9153566""]","The special magic number for bright-urgency is **9153566**.
+
+There are no other special magic numbers mentioned in the provided text for any other categories, including ""unknown"". The text only mentions this single magic number.",1,TRUE,"[""9153566""]",36.23739266,3343,583,3926

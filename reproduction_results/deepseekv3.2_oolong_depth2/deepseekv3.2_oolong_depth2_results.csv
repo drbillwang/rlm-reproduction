@@ -1,0 +1,81 @@
+sample_id,dataset,question,gold_answer,rlm_response,score,correct,extracted_answer,parse_confidence,execution_time,input_tokens,output_tokens,total_tokens
+0,trec_coarse,"In the above data, which of the labels is the most common? Give your final answer in the form 'Label: answer' where answer is one of the labels: abbreviation, entity, human being, numeric value, location, description and abstract concept.",['abbreviation'],Label: abbreviation,1,TRUE,abbreviation,vhigh,96.64669704,3410,2198,5608
+1,trec_coarse,"In the above data, which of the labels is the least common? Give your final answer in the form 'Label: answer' where answer is one of the labels: abbreviation, entity, human being, numeric value, location, description and abstract concept.",['location'],Label: abbreviation,0,FALSE,abbreviation,vhigh,45.0934015,3396,1195,4591
+2,trec_coarse,"In the above data, is label 'abbreviation' more common, less common, or the same frequency as label 'entity'? Give your final answer in the form 'Answer: abbreviation is [X] entity', where [X] is 'more common than', 'less common than', or 'same frequency as'.",['more common than'],Answer: abbreviation is same frequency as entity,0,FALSE,same frequency,high,53.65690621,2708,1488,4196
+3,trec_coarse,"In the above data, is label 'abbreviation' more common, less common, or the same frequency as label 'human being'? Give your final answer in the form 'Answer: abbreviation is [X] human being', where [X] is 'more common than', 'less common than', or 'same frequency as'.",['more common than'],Answer: abbreviation is same frequency as human being,0,FALSE,same frequency,high,28.55547971,2710,739,3449
+4,trec_coarse,"In the above data, is label 'abbreviation' more common, less common, or the same frequency as label 'numeric value'? Give your final answer in the form 'Answer: abbreviation is [X] numeric value', where [X] is 'more common than', 'less common than', or 'same frequency as'.",['more common than'],Answer: abbreviation is same frequency as numeric value,0,FALSE,same frequency,high,35.45203412,2710,869,3579
+5,trec_coarse,"In the above data, is label 'abbreviation' more common, less common, or the same frequency as label 'location'? Give your final answer in the form 'Answer: abbreviation is [X] location', where [X] is 'more common than', 'less common than', or 'same frequency as'.",['more common than'],Answer: abbreviation is same frequency as location,0,FALSE,same frequency,high,30.61535558,2708,710,3418
+6,trec_coarse,"In the above data, is label 'abbreviation' more common, less common, or the same frequency as label 'description and abstract concept'? Give your final answer in the form 'Answer: abbreviation is [X] description and abstract concept', where [X] is 'more common than', 'less common than', or 'same frequency as'.",['more common than'],Answer: abbreviation is less common than description and abstract concept,0,FALSE,less common,high,199.9602774,5353,4961,10314
+7,trec_coarse,"In the above data, is label 'entity' more common, less common, or the same frequency as label 'human being'? Give your final answer in the form 'Answer: entity is [X] human being', where [X] is 'more common than', 'less common than', or 'same frequency as'.",['more common than'],Answer: entity is same frequency as human being,0,FALSE,same frequency,high,140.5426916,2825,3518,6343
+8,trec_coarse,"In the above data, is label 'entity' more common, less common, or the same frequency as label 'numeric value'? Give your final answer in the form 'Answer: entity is [X] numeric value', where [X] is 'more common than', 'less common than', or 'same frequency as'.",['more common than'],Answer: entity is same frequency as numeric value,0,FALSE,same frequency,high,36.006895,2708,849,3557
+9,trec_coarse,"In the above data, is label 'entity' more common, less common, or the same frequency as label 'location'? Give your final answer in the form 'Answer: entity is [X] location', where [X] is 'more common than', 'less common than', or 'same frequency as'.",['more common than'],Answer: entity is same frequency as location,0,FALSE,same frequency,high,39.929493,2706,935,3641
+10,trec_coarse,"In the above data, is label 'entity' more common, less common, or the same frequency as label 'description and abstract concept'? Give your final answer in the form 'Answer: entity is [X] description and abstract concept', where [X] is 'more common than', 'less common than', or 'same frequency as'.",['same frequency as'],"Answer: Let's count the occurrences of each label based on the questions.
+
+**Step 1 – Assign labels to each question:**
+
+1. What is one of the languages of the Sioux?  
+   → Language name (e.g., Lakota, Dakota) → **entity** (specific named thing, not a person/location/number/abbreviation/description).
+
+2. What is the name of the Family Circus's dog?  
+   → Name of a character (e.g., Barfy) → **entity**.
+
+3. What was the verdict in the 1925 trial of John T. Scopes?  
+   → ""Guilty"" or ""convicted"" → **description and abstract concept** (verdict is a concept/description).
+
+4. What does snafu stand for?  
+   → Expansion of acronym → **abbreviation**.
+
+5. How many colors are there in a rainbow?  
+   → Number (e.g., 7) → **numeric value**.
+
+6. Where did the saying ""rule of thumb"" come from?  
+   → Origin (e.g., ""from carpentry"" or ""from English common law"") → **description and abstract concept**.
+
+7. Who was the author of the famous fairy tale ""Snow White and Seven Dwarfs""?  
+   → Person (e.g., Brothers Grimm) → **human being**.
+
+8. When reading classified ads, what does EENTY : other stand for?  
+   → Expansion of abbreviation → **abbreviation**.
+
+9. What is RAM in the computer?  
+   → Explanation (e.g., Random Access Memory) → **abbreviation**.
+
+10. What does NAFTA stand for?  
+    → Expansion of acronym → **abbreviation**.
+
+11. What film marked Robert Redford's directorial debut?  
+    → Film title (e.g., Ordinary People) → **entity**.
+
+12. Which Rockefeller was sometimes called ""JDR3""?  
+    → Person (John D. Rockefeller III) → **human being**.
+
+13. In My Antonia, how is Mr. Shimerda out of place on the farm?  
+    → Descriptive reason (e.g., he was a city person, or he was depressed) → **description and abstract concept**.
+
+14. What is the regular price?  
+    → This is ambiguous without context, but likely asks for a price amount → **numeric value** (or possibly description if it's like ""the standard price""). Given typical quiz context, probably numeric.
+
+**Step 2 – Tally labels:**
+
+- abbreviation: Q4, Q8, Q9, Q10 → 4  
+- entity: Q1, Q2, Q11 → 3  
+- human being: Q7, Q12 → 2  
+- numeric value: Q5, Q14 → 2  
+- location: 0  
+- description and abstract concept: Q3, Q6, Q13 → 3  
+
+**Step 3 – Compare 'entity' and 'description and abstract concept':**  
+Both have count 3 → same frequency.
+
+**Step 4 – Format answer:**
+
+Answer: entity is same frequency as description and abstract concept",1,TRUE,same frequency,high,741.5487199,6173,5542,11715
+11,trec_coarse,"In the above data, is label 'human being' more common, less common, or the same frequency as label 'numeric value'? Give your final answer in the form 'Answer: human being is [X] numeric value', where [X] is 'more common than', 'less common than', or 'same frequency as'.",['same frequency as'],Answer: human being is same frequency as numeric value,1,TRUE,same frequency,high,54.06900183,3440,1250,4690
+12,trec_coarse,"In the above data, is label 'human being' more common, less common, or the same frequency as label 'location'? Give your final answer in the form 'Answer: human being is [X] location', where [X] is 'more common than', 'less common than', or 'same frequency as'.",['more common than'],Answer: human being is more common than location,1,TRUE,more common,high,103.8228837,2708,2486,5194
+13,trec_coarse,"In the above data, is label 'human being' more common, less common, or the same frequency as label 'description and abstract concept'? Give your final answer in the form 'Answer: human being is [X] description and abstract concept', where [X] is 'more common than', 'less common than', or 'same frequency as'.",['less common than'],Answer: human being is same frequency as description and abstract concept,0,FALSE,same frequency,high,715.2212139,9187,4978,14165
+14,trec_coarse,"In the above data, is label 'numeric value' more common, less common, or the same frequency as label 'location'? Give your final answer in the form 'Answer: numeric value is [X] location', where [X] is 'more common than', 'less common than', or 'same frequency as'.",['more common than'],Answer: numeric value is same frequency as location,0,FALSE,same frequency,high,52.60598679,3395,1174,4569
+15,trec_coarse,"In the above data, is label 'numeric value' more common, less common, or the same frequency as label 'description and abstract concept'? Give your final answer in the form 'Answer: numeric value is [X] description and abstract concept', where [X] is 'more common than', 'less common than', or 'same frequency as'.",['less common than'],Answer: numeric value is less common than description and abstract concept,1,TRUE,less common,high,666.3869664,4908,4328,9236
+16,trec_coarse,"In the above data, is label 'location' more common, less common, or the same frequency as label 'description and abstract concept'? Give your final answer in the form 'Answer: location is [X] description and abstract concept', where [X] is 'more common than', 'less common than', or 'same frequency as'.",['less common than'],Answer: location is same frequency as description and abstract concept,0,FALSE,same frequency,high,46.77127063,2712,1088,3800
+17,trec_coarse,"In the above data, how many data points should be classified as label 'abbreviation'? Give your final answer in the form 'Answer: number'.",[4],2,0.5625,FALSE,2,vhigh,89.25760504,4869,2078,6947
+18,trec_coarse,"In the above data, how many data points should be classified as label 'entity'? Give your final answer in the form 'Answer: number'.",[3],0,0.421875,FALSE,0,vhigh,226.8088656,6731,5016,11747
+19,trec_coarse,"In the above data, how many data points should be classified as label 'human being'? Give your final answer in the form 'Answer: number'.",[2],Answer: 3,0.75,FALSE,3,vhigh,515.2955223,4797,5653,10450

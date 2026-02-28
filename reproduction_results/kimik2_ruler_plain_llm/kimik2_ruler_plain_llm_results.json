@@ -1,0 +1,416 @@
+{
+  "experiment": "ruler_plain_llm",
+  "model": "kimi-k2-thinking-251104",
+  "method": "plain_llm",
+  "max_seq_length": 4096,
+  "num_samples": 20,
+  "accuracy": 100.0,
+  "avg_score": 100.0,
+  "correct_count": 20,
+  "avg_execution_time": 34.47724040746689,
+  "total_input_tokens": 73200,
+  "total_output_tokens": 12943,
+  "total_tokens": 86143,
+  "results": [
+    {
+      "sample_id": 0,
+      "needle_key": "unknown",
+      "gold_answers": [
+        "2338687"
+      ],
+      "llm_response": "The special magic number for harmonious-uniform mentioned in the text is **2338687**.\n\nThere are no \"special magic numbers for unknown\" mentioned anywhere in the provided text. The only special magic number explicitly identified is the one for harmonious-uniform (2338687).",
+      "score": 1.0,
+      "correct": true,
+      "found": [
+        "2338687"
+      ],
+      "execution_time": 47.83319115638733,
+      "usage": {
+        "input_tokens": 3341,
+        "output_tokens": 506,
+        "total_tokens": 3847,
+        "cost": 0.0
+      }
+    },
+    {
+      "sample_id": 1,
+      "needle_key": "unknown",
+      "gold_answers": [
+        "7210606"
+      ],
+      "llm_response": "The special magic number for **discreet-commodity** mentioned in the text is: **7210606**\n\nThere are **no special magic numbers for unknown** mentioned in the provided text.",
+      "score": 1.0,
+      "correct": true,
+      "found": [
+        "7210606"
+      ],
+      "execution_time": 29.245357275009155,
+      "usage": {
+        "input_tokens": 3343,
+        "output_tokens": 847,
+        "total_tokens": 4190,
+        "cost": 0.0
+      }
+    },
+    {
+      "sample_id": 2,
+      "needle_key": "unknown",
+      "gold_answers": [
+        "5107245"
+      ],
+      "llm_response": "The special magic number for roasted-poetry mentioned in the text is **5107245**.\n\nThis is the only special magic number explicitly mentioned in the provided text. There are no other \"special magic numbers\" for any other categories (including \"unknown\") stated in the passage.",
+      "score": 1.0,
+      "correct": true,
+      "found": [
+        "5107245"
+      ],
+      "execution_time": 27.062448024749756,
+      "usage": {
+        "input_tokens": 3343,
+        "output_tokens": 527,
+        "total_tokens": 3870,
+        "cost": 0.0
+      }
+    },
+    {
+      "sample_id": 3,
+      "needle_key": "unknown",
+      "gold_answers": [
+        "5528972"
+      ],
+      "llm_response": "The special magic number for lovely-filter is: **5528972**\n\nThere are no special magic numbers for \"unknown\" mentioned in the provided text. The only magic number referenced is 5528972, which is specifically for lovely-filter.",
+      "score": 1.0,
+      "correct": true,
+      "found": [
+        "5528972"
+      ],
+      "execution_time": 48.98957371711731,
+      "usage": {
+        "input_tokens": 3917,
+        "output_tokens": 839,
+        "total_tokens": 4756,
+        "cost": 0.0
+      }
+    },
+    {
+      "sample_id": 4,
+      "needle_key": "unknown",
+      "gold_answers": [
+        "6440561"
+      ],
+      "llm_response": "The special magic number for vague-shear mentioned in the text is **6440561**.\n\nThere are no other \"special magic numbers\" mentioned in the provided text. The only magic number referenced is the one for vague-shear (6440561). The text does not contain any special magic numbers for \"unknown\" or any other category.",
+      "score": 1.0,
+      "correct": true,
+      "found": [
+        "6440561"
+      ],
+      "execution_time": 44.341325759887695,
+      "usage": {
+        "input_tokens": 3921,
+        "output_tokens": 552,
+        "total_tokens": 4473,
+        "cost": 0.0
+      }
+    },
+    {
+      "sample_id": 5,
+      "needle_key": "unknown",
+      "gold_answers": [
+        "4539704"
+      ],
+      "llm_response": "The special magic number for berserk-suitcase mentioned in the text is **4539704**.\n\nThere are **no special magic numbers for \"unknown\"** mentioned in the provided text. The only special magic number referenced is the one for berserk-suitcase (4539704).",
+      "score": 1.0,
+      "correct": true,
+      "found": [
+        "4539704"
+      ],
+      "execution_time": 47.144384145736694,
+      "usage": {
+        "input_tokens": 3345,
+        "output_tokens": 453,
+        "total_tokens": 3798,
+        "cost": 0.0
+      }
+    },
+    {
+      "sample_id": 6,
+      "needle_key": "unknown",
+      "gold_answers": [
+        "5443951"
+      ],
+      "llm_response": "The special magic number for deafening-radish mentioned in the text is **5443951**.\n\nRegarding all special magic numbers for \"unknown\" mentioned in the text: there are **none**. The only special magic number explicitly mentioned in the entire text is 5443951, which is specifically associated with \"deafening-radish\". No other special magic numbers (including any for \"unknown\") appear in the provided text.",
+      "score": 1.0,
+      "correct": true,
+      "found": [
+        "5443951"
+      ],
+      "execution_time": 32.44808340072632,
+      "usage": {
+        "input_tokens": 3345,
+        "output_tokens": 890,
+        "total_tokens": 4235,
+        "cost": 0.0
+      }
+    },
+    {
+      "sample_id": 7,
+      "needle_key": "unknown",
+      "gold_answers": [
+        "7700828"
+      ],
+      "llm_response": "The special magic number for solid-sanction mentioned in the text is **7700828**.\n\nThere are no special magic numbers for \"unknown\" mentioned in the provided text. The only magic number referenced is the one for solid-sanction (7700828).",
+      "score": 1.0,
+      "correct": true,
+      "found": [
+        "7700828"
+      ],
+      "execution_time": 31.649513959884644,
+      "usage": {
+        "input_tokens": 3343,
+        "output_tokens": 812,
+        "total_tokens": 4155,
+        "cost": 0.0
+      }
+    },
+    {
+      "sample_id": 8,
+      "needle_key": "unknown",
+      "gold_answers": [
+        "9548432"
+      ],
+      "llm_response": "The special magic number for dark-boyhood mentioned in the text is **9548432**.\n\nThis is the only \"special magic number\" explicitly mentioned in the provided text. There are no other special magic numbers for any other categories (including \"unknown\") mentioned.",
+      "score": 1.0,
+      "correct": true,
+      "found": [
+        "9548432"
+      ],
+      "execution_time": 34.54927897453308,
+      "usage": {
+        "input_tokens": 3921,
+        "output_tokens": 740,
+        "total_tokens": 4661,
+        "cost": 0.0
+      }
+    },
+    {
+      "sample_id": 9,
+      "needle_key": "unknown",
+      "gold_answers": [
+        "2839607"
+      ],
+      "llm_response": "The special magic number for annoying-doorbell is **2839607**.\n\nThere are no special magic numbers for \"unknown\" mentioned in the provided text. The only special magic number mentioned is the one for annoying-doorbell (2839607).",
+      "score": 1.0,
+      "correct": true,
+      "found": [
+        "2839607"
+      ],
+      "execution_time": 34.14275074005127,
+      "usage": {
+        "input_tokens": 3919,
+        "output_tokens": 694,
+        "total_tokens": 4613,
+        "cost": 0.0
+      }
+    },
+    {
+      "sample_id": 10,
+      "needle_key": "unknown",
+      "gold_answers": [
+        "8082668"
+      ],
+      "llm_response": "The special magic number for used-postfix mentioned in the text is **8082668**.\n\nThere are no special magic numbers for \"unknown\" mentioned in the provided text. Only the number for \"used-postfix\" (8082668) appears.",
+      "score": 1.0,
+      "correct": true,
+      "found": [
+        "8082668"
+      ],
+      "execution_time": 20.579483032226562,
+      "usage": {
+        "input_tokens": 3919,
+        "output_tokens": 583,
+        "total_tokens": 4502,
+        "cost": 0.0
+      }
+    },
+    {
+      "sample_id": 11,
+      "needle_key": "unknown",
+      "gold_answers": [
+        "7402509"
+      ],
+      "llm_response": "The special magic number for lush-tornado mentioned in the text is **7402509**.\n\nThere are no other \"special magic numbers\" mentioned in the provided text - only this single number appears with that specific phrasing.",
+      "score": 1.0,
+      "correct": true,
+      "found": [
+        "7402509"
+      ],
+      "execution_time": 29.465590238571167,
+      "usage": {
+        "input_tokens": 3919,
+        "output_tokens": 592,
+        "total_tokens": 4511,
+        "cost": 0.0
+      }
+    },
+    {
+      "sample_id": 12,
+      "needle_key": "unknown",
+      "gold_answers": [
+        "5218028"
+      ],
+      "llm_response": "The special magic number for rhetorical-industry mentioned in the text is **5218028**.\n\nThere are **no special magic numbers for unknown** mentioned in the provided text. The only special magic number referenced is the one for rhetorical-industry (5218028).",
+      "score": 1.0,
+      "correct": true,
+      "found": [
+        "5218028"
+      ],
+      "execution_time": 20.83045744895935,
+      "usage": {
+        "input_tokens": 3921,
+        "output_tokens": 717,
+        "total_tokens": 4638,
+        "cost": 0.0
+      }
+    },
+    {
+      "sample_id": 13,
+      "needle_key": "unknown",
+      "gold_answers": [
+        "2921859"
+      ],
+      "llm_response": "The special magic number for used-hound is: **2921859**\n\nThere are **no special magic numbers for unknown** mentioned in the provided text. The only special magic number referenced is the one for used-hound (2921859).",
+      "score": 1.0,
+      "correct": true,
+      "found": [
+        "2921859"
+      ],
+      "execution_time": 31.9644615650177,
+      "usage": {
+        "input_tokens": 3919,
+        "output_tokens": 751,
+        "total_tokens": 4670,
+        "cost": 0.0
+      }
+    },
+    {
+      "sample_id": 14,
+      "needle_key": "unknown",
+      "gold_answers": [
+        "6707197"
+      ],
+      "llm_response": "The special magic number for tested-shout mentioned in the text is **6707197**.\n\nThere are no other special magic numbers mentioned in the provided text. The only special magic number referenced is the one for tested-shout (6707197). No numbers are mentioned for \"unknown\" or any other categories.",
+      "score": 1.0,
+      "correct": true,
+      "found": [
+        "6707197"
+      ],
+      "execution_time": 36.80953526496887,
+      "usage": {
+        "input_tokens": 3919,
+        "output_tokens": 392,
+        "total_tokens": 4311,
+        "cost": 0.0
+      }
+    },
+    {
+      "sample_id": 15,
+      "needle_key": "unknown",
+      "gold_answers": [
+        "5418934"
+      ],
+      "llm_response": "The special magic number for **workable-chateau** mentioned in the text is: **5418934**\n\nThere are **no special magic numbers for unknown** mentioned in the provided text. The only special magic number referenced is the one for workable-chateau (5418934).",
+      "score": 1.0,
+      "correct": true,
+      "found": [
+        "5418934"
+      ],
+      "execution_time": 35.57136034965515,
+      "usage": {
+        "input_tokens": 3341,
+        "output_tokens": 649,
+        "total_tokens": 3990,
+        "cost": 0.0
+      }
+    },
+    {
+      "sample_id": 16,
+      "needle_key": "unknown",
+      "gold_answers": [
+        "2785277"
+      ],
+      "llm_response": "The special magic number for quick-vane mentioned in the text is **2785277**.\n\nThis is the only magic number explicitly mentioned in the provided text. There are no \"special magic numbers for unknown\" mentioned\u2014the text only references this single number for quick-vane.",
+      "score": 1.0,
+      "correct": true,
+      "found": [
+        "2785277"
+      ],
+      "execution_time": 46.613614559173584,
+      "usage": {
+        "input_tokens": 3919,
+        "output_tokens": 663,
+        "total_tokens": 4582,
+        "cost": 0.0
+      }
+    },
+    {
+      "sample_id": 17,
+      "needle_key": "unknown",
+      "gold_answers": [
+        "6438436"
+      ],
+      "llm_response": "The special magic number for stale-spaghetti mentioned in the text is **6438436**.\n\nThere are **no special magic numbers for unknown** mentioned in the provided text. The only magic number referenced is the one for stale-spaghetti (6438436).",
+      "score": 1.0,
+      "correct": true,
+      "found": [
+        "6438436"
+      ],
+      "execution_time": 30.99919319152832,
+      "usage": {
+        "input_tokens": 3341,
+        "output_tokens": 649,
+        "total_tokens": 3990,
+        "cost": 0.0
+      }
+    },
+    {
+      "sample_id": 18,
+      "needle_key": "unknown",
+      "gold_answers": [
+        "7089806"
+      ],
+      "llm_response": "The special magic number for colossal-friend mentioned in the text is **7089806**.\n\nThere are no other \"special magic numbers\" mentioned in the provided text. The only one explicitly labeled as such is 7089806 for colossal-friend.",
+      "score": 1.0,
+      "correct": true,
+      "found": [
+        "7089806"
+      ],
+      "execution_time": 23.06781268119812,
+      "usage": {
+        "input_tokens": 3921,
+        "output_tokens": 504,
+        "total_tokens": 4425,
+        "cost": 0.0
+      }
+    },
+    {
+      "sample_id": 19,
+      "needle_key": "unknown",
+      "gold_answers": [
+        "9153566"
+      ],
+      "llm_response": "The special magic number for bright-urgency is **9153566**.\n\nThere are no other special magic numbers mentioned in the provided text for any other categories, including \"unknown\". The text only mentions this single magic number.",
+      "score": 1.0,
+      "correct": true,
+      "found": [
+        "9153566"
+      ],
+      "execution_time": 36.23739266395569,
+      "usage": {
+        "input_tokens": 3343,
+        "output_tokens": 583,
+        "total_tokens": 3926,
+        "cost": 0.0
+      }
+    }
+  ]
+}

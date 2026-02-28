@@ -1,0 +1,915 @@
+sample_id,dataset,question,gold_answer,llm_response,score,correct,extracted_answer,parse_confidence,execution_time,input_tokens,output_tokens,total_tokens
+0,trec_coarse,"In the above data, which of the labels is the most common? Give your final answer in the form 'Label: answer' where answer is one of the labels: abbreviation, entity, human being, numeric value, location, description and abstract concept.",['abbreviation'],"Let’s go through each question and assign the most likely answer category based on the question’s intent.  
+
+1. **What is one of the languages of the Sioux?**  
+   → Answer example: “Lakota” (entity — a language is an entity)  
+
+2. **What is the name of the Family Circus’s dog?**  
+   → Answer example: “Barfy” or “Sammy” (entity — a named pet)  
+
+3. **What was the verdict in the 1925 trial of John T. Scopes?**  
+   → Answer example: “Guilty” (description and abstract concept — a verdict)  
+
+4. **What does snafu stand for?**  
+   → Answer example: “Situation Normal: All Fouled Up” (abbreviation)  
+
+5. **How many colors are there in a rainbow?**  
+   → Answer example: “7” (numeric value)  
+
+6. **Where did the saying “rule of thumb” come from?**  
+   → Answer example: “From an old practice of using the thumb to approximate measurements” (description and abstract concept — origin explanation)  
+
+7. **Who was the author of the famous fairy tale “Snow White and Seven Dwarfs”?**  
+   → Answer example: “The Brothers Grimm” (human being)  
+
+8. **When reading classified ads, what does EENTY : other stand for?**  
+   → Answer example: “Excellent, Exceptional, Near New, Top Quality” (abbreviation)  
+
+9. **What is RAM in the computer?**  
+   → Answer example: “Random Access Memory” (abbreviation)  
+
+10. **What does NAFTA stand for?**  
+    → Answer example: “North American Free Trade Agreement” (abbreviation)  
+
+11. **What film marked Robert Redford’s directorial debut?**  
+    → Answer example: “Ordinary People” (entity — a film title)  
+
+12. **Which Rockefeller was sometimes called “JDR3”?**  
+    → Answer example: “John D. Rockefeller III” (human being)  
+
+13. **In My Antonia, how is Mr. Shimerda out of place on the farm?**  
+    → Answer example: “He was a cultured city man unused to manual labor” (description and abstract concept)  
+
+14. **What is the regular price?**  
+    → Answer example",0,FALSE,"“He was a cultured city man unused to manual labor” (description and abstract concept)  
+
+14. What is the regular price?  
+    → Answer example",med,19.2973392,672,512,1184
+1,trec_coarse,"In the above data, which of the labels is the least common? Give your final answer in the form 'Label: answer' where answer is one of the labels: abbreviation, entity, human being, numeric value, location, description and abstract concept.",['location'],"Let’s go through each question and assign the most likely label for its answer.  
+
+**1. What is one of the languages of the Sioux?**  
+Answer example: Lakota, Dakota, Nakota → these are languages (entities, but language names are usually considered “entity” or “description and abstract concept”? Actually, a named language is an entity, but “description and abstract concept” is for non-named abstract ideas. I’d say entity.)  
+
+**2. What is the name of the Family Circus’s dog?**  
+Answer: Barfy or Sam? Actually, it’s “Barfy” in some strips, but commonly known as “Sam” or “Dolly”? Wait, known fact: Family Circus dog is “Sam” (or sometimes “Barfy” early on). This is a named entity (dog’s name) → entity.  
+
+**3. What was the verdict in the 1925 trial of John T. Scopes?**  
+Answer: Guilty → description and abstract concept (verdict type).  
+
+**4. What does snafu stand for?**  
+Answer: Situation Normal All Fouled Up → abbreviation.  
+
+**5. How many colors are there in a rainbow?**  
+Answer: 7 → numeric value.  
+
+**6. Where did the saying “rule of thumb” come from?**  
+Answer: Possibly from carpentry using thumb for measurement, or from old English law. This asks for origin explanation → description and abstract concept.  
+
+**7. Who was the author of the famous fairy tale “Snow White and Seven Dwarfs”?**  
+Answer: Brothers Grimm (Jacob and Wilhelm Grimm) → human being(s).  
+
+**8. When reading classified ads, what does EENTY: other stand for?**  
+Answer: “Excellent condition, no tears or yellowing” (in collectibles ads) → abbreviation.  
+
+**9. What is RAM in the computer?**  
+Answer: Random Access Memory → abbreviation.  
+
+**10. What does NAFTA stand for?**  
+Answer: North American Free Trade Agreement → abbreviation.  
+
+**11. What film marked Robert Redford’s directorial debut?**  
+Answer: Ordinary People → entity (film title).  
+
+**12. Which Rockefeller was sometimes called “JDR3”?**  
+Answer: John D. Rockefeller III → human being.  
+
+**13. In My Antonia, how is Mr. Shimerda out of place on",0,FALSE,"John D. Rockefeller III → human being.  
+
+13. In My Antonia, how is Mr. Shimerda out of place on",high,18.99631596,672,512,1184
+2,trec_coarse,"In the above data, is label 'abbreviation' more common, less common, or the same frequency as label 'entity'? Give your final answer in the form 'Answer: abbreviation is [X] entity', where [X] is 'more common than', 'less common than', or 'same frequency as'.",['more common than'],"Let’s go through each question and assign the answer category based on the likely answer type.
+
+1. What is one of the languages of the Sioux?  
+   → Answer: e.g., Lakota, Dakota (language name) → **entity** (language is an entity, not a human, number, etc.)
+
+2. What is the name of the Family Circus’s dog?  
+   → Answer: e.g., Barfy or Sam (specific name) → **entity** (named animal character)
+
+3. What was the verdict in the 1925 trial of John T. Scopes?  
+   → Answer: Guilty (verdict type) → **description and abstract concept**
+
+4. What does snafu stand for?  
+   → Answer: Situation Normal: All Fouled Up (expansion of acronym) → **abbreviation**
+
+5. How many colors are there in a rainbow?  
+   → Answer: 7 (number) → **numeric value**
+
+6. Where did the saying “rule of thumb” come from?  
+   → Answer: e.g., from carpentry, from old law (origin explanation) → **description and abstract concept**
+
+7. Who was the author of the famous fairy tale “Snow White and Seven Dwarfs”?  
+   → Answer: Brothers Grimm (or specific person) → **human being**
+
+8. When reading classified ads, what does EENTY: other stand for?  
+   → Answer: likely expansion of abbreviation → **abbreviation**
+
+9. What is RAM in the computer?  
+   → Answer: Random Access Memory (expansion of acronym) → **abbreviation**
+
+10. What does NAFTA stand for?  
+    → Answer: North American Free Trade Agreement (expansion) → **abbreviation**
+
+11. What film marked Robert Redford’s directorial debut?  
+    → Answer: Ordinary People (film title) → **entity**
+
+12. Which Rockefeller was sometimes called “JDR3”?  
+    → Answer: John D. Rockefeller III (person) → **human being**
+
+13. In My Antonia, how is Mr. Shimerda out of place on the farm?  
+    → Answer: e.g., he was a city person, not a farmer (description) → **description and abstract concept**
+
+14. What is the regular price?  
+    → Answer: e.g., $20 (numeric value) or “the standard price” (description) — but likely numeric value if specific, but",0,FALSE,"e.g., $20 (numeric value) or “the standard price” (description) — but likely numeric value if specific, but",high,18.79072785,687,512,1199
+3,trec_coarse,"In the above data, is label 'abbreviation' more common, less common, or the same frequency as label 'human being'? Give your final answer in the form 'Answer: abbreviation is [X] human being', where [X] is 'more common than', 'less common than', or 'same frequency as'.",['more common than'],"Let’s go through each question and assign the answer category based on the likely correct answer type.
+
+1. **What is one of the languages of the Sioux?**  
+   Answer: e.g., Lakota, Dakota — these are **entity** (language names).  
+   Category: *entity*.
+
+2. **What is the name of the Family Circus's dog?**  
+   Answer: e.g., Barfy — a name of a pet.  
+   Category: *entity* (specific named thing, not human).
+
+3. **What was the verdict in the 1925 trial of John T. Scopes?**  
+   Answer: Guilty — a **description and abstract concept** (verdict type).  
+   Category: *description and abstract concept*.
+
+4. **What does snafu stand for?**  
+   Answer: Situation Normal: All Fouled Up — expansion of an acronym.  
+   Category: *abbreviation*.
+
+5. **How many colors are there in a rainbow?**  
+   Answer: 7 — a number.  
+   Category: *numeric value*.
+
+6. **Where did the saying ""rule of thumb"" come from?**  
+   Answer: e.g., from an old law about wife-beating with a stick no thicker than a thumb — an origin explanation.  
+   Category: *description and abstract concept*.
+
+7. **Who was the author of the famous fairy tale ""Snow White and Seven Dwarfs""?**  
+   Answer: The Brothers Grimm (Jacob and Wilhelm Grimm) — people.  
+   Category: *human being*.
+
+8. **When reading classified ads, what does EENTY: other stand for?**  
+   Answer: Explanation of abbreviation.  
+   Category: *abbreviation*.
+
+9. **What is RAM in the computer?**  
+   Answer: Random Access Memory — expansion of acronym.  
+   Category: *abbreviation*.
+
+10. **What does NAFTA stand for?**  
+    Answer: North American Free Trade Agreement — expansion of acronym.  
+    Category: *abbreviation*.
+
+11. **What film marked Robert Redford's directorial debut?**  
+    Answer: *Ordinary People* — a film title.  
+    Category: *entity*.
+
+12. **Which Rockefeller was sometimes called ""JDR3""?**  
+    Answer: John D. Rockefeller III — a person.  
+    Category: *human being*.
+
+13.",0,FALSE,"human being.
+
+13.",vhigh,17.66042495,689,512,1201
+4,trec_coarse,"In the above data, is label 'abbreviation' more common, less common, or the same frequency as label 'numeric value'? Give your final answer in the form 'Answer: abbreviation is [X] numeric value', where [X] is 'more common than', 'less common than', or 'same frequency as'.",['more common than'],"Let’s go through each question and assign the answer category based on the likely correct answer type.
+
+1. What is one of the languages of the Sioux?  
+   → Likely a language name (e.g., Lakota, Dakota) → **entity**  
+
+2. What is the name of the Family Circus’s dog?  
+   → Name of a character (e.g., Barfy, Sam) → **entity**  
+
+3. What was the verdict in the 1925 trial of John T. Scopes?  
+   → “Guilty” (or similar) → **description and abstract concept**  
+
+4. What does snafu stand for?  
+   → Expansion of an acronym → **abbreviation**  
+
+5. How many colors are there in a rainbow?  
+   → “7” → **numeric value**  
+
+6. Where did the saying “rule of thumb” come from?  
+   → Origin explanation → **description and abstract concept**  
+
+7. Who was the author of the famous fairy tale “Snow White and Seven Dwarfs”?  
+   → Person (e.g., Brothers Grimm) → **human being**  
+
+8. When reading classified ads, what does EENTY : other stand for?  
+   → Expansion of abbreviation → **abbreviation**  
+
+9. What is RAM in the computer?  
+   → Explanation (Random Access Memory) → **abbreviation**  
+
+10. What does NAFTA stand for?  
+    → Expansion of acronym → **abbreviation**  
+
+11. What film marked Robert Redford’s directorial debut?  
+    → Movie title → **entity**  
+
+12. Which Rockefeller was sometimes called “JDR3”?  
+    → Person (John D. Rockefeller III) → **human being**  
+
+13. In My Antonia, how is Mr. Shimerda out of place on the farm?  
+    → Descriptive explanation → **description and abstract concept**  
+
+14. What is the regular price?  
+    → Likely a specific price or “MSRP” concept → **description and abstract concept** (or numeric if specific, but question is generic, so abstract)  
+
+---
+
+**Tally:**  
+- abbreviation: Q4, Q8, Q9, Q10 → **4**  
+- entity: Q1, Q2, Q11 → **3**  
+- human being: Q7, Q12 → **2**  
+- numeric value: Q5 → **1**  
+-",0,FALSE,"Q5 → 1  
+-",vhigh,18.36633182,689,512,1201
+5,trec_coarse,"In the above data, is label 'abbreviation' more common, less common, or the same frequency as label 'location'? Give your final answer in the form 'Answer: abbreviation is [X] location', where [X] is 'more common than', 'less common than', or 'same frequency as'.",['more common than'],"Let’s go through each question and assign the answer category based on the likely answer type.
+
+1. What is one of the languages of the Sioux?  
+   → Likely answer: e.g., ""Lakota"" or ""Dakota"" → **entity** (language name is an entity, not a location or human)
+
+2. What is the name of the Family Circus's dog?  
+   → Likely answer: ""Barfy"" or ""Sammy"" → **entity** (specific named entity, not human)
+
+3. What was the verdict in the 1925 trial of John T. Scopes?  
+   → Likely answer: ""guilty"" → **description and abstract concept** (verdict description)
+
+4. What does snafu stand for?  
+   → Answer: ""Situation Normal: All Fouled Up"" → **abbreviation** (expansion of acronym)
+
+5. How many colors are there in a rainbow?  
+   → Answer: ""7"" → **numeric value**
+
+6. Where did the saying ""rule of thumb"" come from?  
+   → Likely answer: ""from an old law allowing husband to beat wife with stick no thicker than thumb"" → **description and abstract concept** (origin explanation)
+
+7. Who was the author of the famous fairy tale ""Snow White and Seven Dwarfs""?  
+   → Answer: ""Brothers Grimm"" or ""Wilhelm Grimm"" etc. → **human being**
+
+8. When reading classified ads, what does EENTY: other stand for?  
+   → Likely answer: ""Excellent, Except for Normal Tiny (scratches)"" or similar → **abbreviation** (expansion of abbreviation)
+
+9. What is RAM in the computer?  
+   → Answer: ""Random Access Memory"" → **abbreviation** (expansion of acronym)
+
+10. What does NAFTA stand for?  
+    → Answer: ""North American Free Trade Agreement"" → **abbreviation**
+
+11. What film marked Robert Redford's directorial debut?  
+    → Answer: ""Ordinary People"" → **entity** (film title)
+
+12. Which Rockefeller was sometimes called ""JDR3""?  
+    → Answer: ""John D. Rockefeller III"" → **human being**
+
+13. In My Antonia, how is Mr. Shimerda out of place on the farm?  
+    → Answer: ""He was a cultured city man"" or similar → **description and abstract concept**
+
+",0,FALSE,"""He was a cultured city man"" or similar → description and abstract concept",high,18.61265707,687,512,1199
+6,trec_coarse,"In the above data, is label 'abbreviation' more common, less common, or the same frequency as label 'description and abstract concept'? Give your final answer in the form 'Answer: abbreviation is [X] description and abstract concept', where [X] is 'more common than', 'less common than', or 'same frequency as'.",['more common than'],"Let's go through each question and assign the answer category.
+
+1. What is one of the languages of the Sioux?  
+   Answer: e.g., Lakota, Dakota, Nakota → language name → **entity** (since it's a named language, not an abstract description of it).
+
+2. What is the name of the Family Circus's dog?  
+   Answer: Barfy or Sam → name of a character → **entity**.
+
+3. What was the verdict in the 1925 trial of John T. Scopes?  
+   Answer: Guilty → **description and abstract concept** (it's a verdict type, not numeric, not location, not abbreviation, not a named entity like a person, but a legal outcome).
+
+4. What does snafu stand for?  
+   Answer: Situation Normal: All Fouled Up → expansion of acronym → **abbreviation**.
+
+5. How many colors are there in a rainbow?  
+   Answer: 7 → **numeric value**.
+
+6. Where did the saying ""rule of thumb"" come from?  
+   Answer: e.g., from an old law allowing husband to beat wife with stick no thicker than thumb → origin explanation → **description and abstract concept**.
+
+7. Who was the author of the famous fairy tale ""Snow White and Seven Dwarfs""?  
+   Answer: Brothers Grimm (Jacob and Wilhelm Grimm) → **human being(s)**.
+
+8. When reading classified ads, what does EENTY: other stand for?  
+   Answer: ""Excellent condition, no tears or yellowing"" (or similar expansion) → **abbreviation**.
+
+9. What is RAM in the computer?  
+   Answer: Random Access Memory → expansion of acronym → **abbreviation**.
+
+10. What does NAFTA stand for?  
+    Answer: North American Free Trade Agreement → **abbreviation**.
+
+11. What film marked Robert Redford's directorial debut?  
+    Answer: Ordinary People → **entity** (film title).
+
+12. Which Rockefeller was sometimes called ""JDR3""?  
+    Answer: John D. Rockefeller III → **human being**.
+
+13. In My Antonia, how is Mr. Shimerda out of place on the farm?  
+    Answer: He was a cultured city man, not suited for farm labor → **description and abstract concept**.
+
+14. What is the regular price?  
+    Answer: e.g., $19.99 or ""the standard retail price"" → likely **numeric value** or **description",0,FALSE,"e.g., $19.99 or ""the standard retail price"" → likely numeric value or description",high,20.02904081,693,512,1205
+7,trec_coarse,"In the above data, is label 'entity' more common, less common, or the same frequency as label 'human being'? Give your final answer in the form 'Answer: entity is [X] human being', where [X] is 'more common than', 'less common than', or 'same frequency as'.",['more common than'],"Let’s go through each question and assign the answer category based on the likely answer type.  
+
+**1. What is one of the languages of the Sioux?**  
+Answer example: Lakota, Dakota, Nakota → these are languages (entity, not location, not human).  
+Category: **entity** (specific named language).  
+
+**2. What is the name of the Family Circus’s dog?**  
+Answer: Barfy (or sometimes Sam) → name of a character (entity, but a non-human named entity).  
+Category: **entity** (named animal character).  
+
+**3. What was the verdict in the 1925 trial of John T. Scopes?**  
+Answer: Guilty → description/abstract concept (verdict type).  
+Category: **description and abstract concept**.  
+
+**4. What does snafu stand for?**  
+Answer: Situation Normal: All Fouled Up → expansion of acronym.  
+Category: **abbreviation**.  
+
+**5. How many colors are there in a rainbow?**  
+Answer: 7 (or sometimes 6 depending on culture, but standard answer is 7) → numeric.  
+Category: **numeric value**.  
+
+**6. Where did the saying “rule of thumb” come from?**  
+Answer: possibly from carpentry (using thumb to measure) or law (old common law) → origin explanation.  
+Category: **description and abstract concept** (explanation of origin).  
+
+**7. Who was the author of the famous fairy tale “Snow White and Seven Dwarfs”?**  
+Answer: Brothers Grimm (Jacob and Wilhelm Grimm) → human beings.  
+Category: **human being**.  
+
+**8. When reading classified ads, what does EENTY: other stand for?**  
+Answer: likely an abbreviation (maybe “Excellent condition, no tears or yellowing” or similar classified ad code) → abbreviation.  
+Category: **abbreviation**.  
+
+**9. What is RAM in the computer?**  
+Answer: Random Access Memory → abbreviation expansion.  
+Category: **abbreviation**.  
+
+**10. What does NAFTA stand for?**  
+Answer: North American Free Trade Agreement → abbreviation expansion.  
+Category: **abbreviation**.  
+
+**11. What film marked Robert Redford’s directorial debut?**  
+Answer: Ordinary People → film title (entity).  
+Category: **entity** (named film).  
+
+**12. Which Rockefeller was sometimes",0,FALSE,"entity (named film).  
+
+12. Which Rockefeller was sometimes",high,19.35609603,687,512,1199
+8,trec_coarse,"In the above data, is label 'entity' more common, less common, or the same frequency as label 'numeric value'? Give your final answer in the form 'Answer: entity is [X] numeric value', where [X] is 'more common than', 'less common than', or 'same frequency as'.",['more common than'],"Let’s go through each question and assign the answer category based on the likely answer type.
+
+1. **What is one of the languages of the Sioux?**  
+   Answer: e.g., Lakota, Dakota (a language name) → **entity** (language as a named entity).
+
+2. **What is the name of the Family Circus's dog?**  
+   Answer: e.g., Barfy, etc. (a name) → **entity** (specific named entity, a pet).
+
+3. **What was the verdict in the 1925 trial of John T. Scopes?**  
+   Answer: Guilty (verdict description) → **description and abstract concept**.
+
+4. **What does snafu stand for?**  
+   Answer: Situation Normal: All Fouled Up → **abbreviation** (expansion of acronym).
+
+5. **How many colors are there in a rainbow?**  
+   Answer: 7 (number) → **numeric value**.
+
+6. **Where did the saying ""rule of thumb"" come from?**  
+   Answer: e.g., from an old law, carpentry, etc. (origin explanation) → **description and abstract concept**.
+
+7. **Who was the author of the famous fairy tale ""Snow White and Seven Dwarfs""?**  
+   Answer: Brothers Grimm (or specific person) → **human being**.
+
+8. **When reading classified ads, what does EENTY: other stand for?**  
+   Answer: likely an abbreviation expansion → **abbreviation**.
+
+9. **What is RAM in the computer?**  
+   Answer: Random Access Memory (expansion) → **abbreviation**.
+
+10. **What does NAFTA stand for?**  
+    Answer: North American Free Trade Agreement → **abbreviation**.
+
+11. **What film marked Robert Redford's directorial debut?**  
+    Answer: Ordinary People (film title) → **entity** (work of art).
+
+12. **Which Rockefeller was sometimes called ""JDR3""?**  
+    Answer: John D. Rockefeller III → **human being**.
+
+13. **In My Antonia, how is Mr. Shimerda out of place on the farm?**  
+    Answer: Explanation of his character/background → **description and abstract concept**.
+
+14. **What is the regular price?**  
+    Answer: Likely a specific price or ""same as marked"" → could be numeric value or description.  
+    Without context, ""regular",0,FALSE,"Likely a specific price or ""same as marked"" → could be numeric value or description.  
+    Without context, ""regular",high,20.04643297,687,512,1199
+9,trec_coarse,"In the above data, is label 'entity' more common, less common, or the same frequency as label 'location'? Give your final answer in the form 'Answer: entity is [X] location', where [X] is 'more common than', 'less common than', or 'same frequency as'.",['more common than'],"Let’s go through each question and assign the answer category based on the likely answer type.  
+
+**1. What is one of the languages of the Sioux?**  
+Answer example: Lakota, Dakota, Nakota → these are languages (entity, since a language is an entity, not a location, human, etc.)  
+Category: **entity**  
+
+**2. What is the name of the Family Circus’s dog?**  
+Answer: Barfy or Sam (a specific named entity, a pet) → **entity**  
+
+**3. What was the verdict in the 1925 trial of John T. Scopes?**  
+Answer: Guilty (description/abstract concept) → **description and abstract concept**  
+
+**4. What does snafu stand for?**  
+Answer: Situation Normal All Fouled Up → **abbreviation**  
+
+**5. How many colors are there in a rainbow?**  
+Answer: 7 → **numeric value**  
+
+**6. Where did the saying “rule of thumb” come from?**  
+Answer: Possibly from carpentry (origin description) or a specific historical source → likely **description and abstract concept** (origin explanation)  
+
+**7. Who was the author of the famous fairy tale “Snow White and Seven Dwarfs”?**  
+Answer: The Brothers Grimm (Jacob and Wilhelm Grimm) → **human being**  
+
+**8. When reading classified ads, what does EENTY: other stand for?**  
+Answer: Possibly “Excellent condition, no tears or yellowing” (example) → **abbreviation**  
+
+**9. What is RAM in the computer?**  
+Answer: Random Access Memory → **abbreviation**  
+
+**10. What does NAFTA stand for?**  
+Answer: North American Free Trade Agreement → **abbreviation**  
+
+**11. What film marked Robert Redford’s directorial debut?**  
+Answer: Ordinary People → **entity** (film title)  
+
+**12. Which Rockefeller was sometimes called “JDR3”?**  
+Answer: John D. Rockefeller III → **human being**  
+
+**13. In My Antonia, how is Mr. Shimerda out of place on the farm?**  
+Answer: He was a cultured man, not suited for farm labor → **description and abstract concept**  
+
+**14. What is the regular price?**  
+Answer: This is ambiguous without context, but likely a specific price or concept → probably **",0,FALSE,"This is ambiguous without context, but likely a specific price or concept → probably ",high,19.25345302,685,512,1197
+10,trec_coarse,"In the above data, is label 'entity' more common, less common, or the same frequency as label 'description and abstract concept'? Give your final answer in the form 'Answer: entity is [X] description and abstract concept', where [X] is 'more common than', 'less common than', or 'same frequency as'.",['same frequency as'],"Let’s go through each question and assign the answer category based on the likely answer type.  
+
+**1. What is one of the languages of the Sioux?**  
+Answer: e.g., Lakota, Dakota (a language name) → **entity** (language as a named entity).  
+
+**2. What is the name of the Family Circus’s dog?**  
+Answer: e.g., Barfy, Sam (specific name) → **entity** (named pet character).  
+
+**3. What was the verdict in the 1925 trial of John T. Scopes?**  
+Answer: Guilty (verdict type) → **description and abstract concept** (abstract concept of a legal outcome).  
+
+**4. What does snafu stand for?**  
+Answer: Situation Normal: All Fouled Up → **abbreviation** (expansion of acronym).  
+
+**5. How many colors are there in a rainbow?**  
+Answer: 7 → **numeric value**.  
+
+**6. Where did the saying “rule of thumb” come from?**  
+Answer: e.g., from carpentry, from old law (origin explanation) → **description and abstract concept** (explanation of origin).  
+
+**7. Who was the author of the famous fairy tale “Snow White and Seven Dwarfs”?**  
+Answer: Brothers Grimm (or specific person) → **human being**.  
+
+**8. When reading classified ads, what does EENTY: other stand for?**  
+Answer: likely an abbreviation expansion → **abbreviation**.  
+
+**9. What is RAM in the computer?**  
+Answer: Random Access Memory (expansion) → **abbreviation**.  
+
+**10. What does NAFTA stand for?**  
+Answer: North American Free Trade Agreement → **abbreviation**.  
+
+**11. What film marked Robert Redford’s directorial debut?**  
+Answer: Ordinary People (film title) → **entity** (named work).  
+
+**12. Which Rockefeller was sometimes called “JDR3”?**  
+Answer: John D. Rockefeller III (person) → **human being**.  
+
+**13. In My Antonia, how is Mr. Shimerda out of place on the farm?**  
+Answer: Explanation of his character/background → **description and abstract concept**.  
+
+**14. What is the regular price?**  
+Answer: This is ambiguous without context, but likely a specific price or concept like “list price”",0,FALSE,"This is ambiguous without context, but likely a specific price or concept like “list price”",high,18.58754802,691,512,1203
+11,trec_coarse,"In the above data, is label 'human being' more common, less common, or the same frequency as label 'numeric value'? Give your final answer in the form 'Answer: human being is [X] numeric value', where [X] is 'more common than', 'less common than', or 'same frequency as'.",['same frequency as'],"Let’s go through each question and assign the answer category based on the likely answer type.
+
+1. What is one of the languages of the Sioux?  
+   → Likely answer: ""Lakota"" or ""Dakota"" (entity — a language) → **entity**
+
+2. What is the name of the Family Circus's dog?  
+   → Likely answer: ""Barfy"" or ""Sammy"" (specific named animal character) → **entity**
+
+3. What was the verdict in the 1925 trial of John T. Scopes?  
+   → Answer: ""guilty"" (description/abstract concept) → **description and abstract concept**
+
+4. What does snafu stand for?  
+   → Answer: ""Situation Normal: All Fouled Up"" (or similar) → **abbreviation**
+
+5. How many colors are there in a rainbow?  
+   → Answer: ""7"" → **numeric value**
+
+6. Where did the saying ""rule of thumb"" come from?  
+   → Answer: likely an origin explanation (e.g., ""from an old law allowing husband to beat wife with stick no thicker than thumb"") → **description and abstract concept**
+
+7. Who was the author of the famous fairy tale ""Snow White and Seven Dwarfs""?  
+   → Answer: ""Brothers Grimm"" or ""Jacob and Wilhelm Grimm"" → **human being**
+
+8. When reading classified ads, what does EENTY: other stand for?  
+   → Answer: likely abbreviation expansion → **abbreviation**
+
+9. What is RAM in the computer?  
+   → Answer: ""Random Access Memory"" → **abbreviation**
+
+10. What does NAFTA stand for?  
+    → Answer: ""North American Free Trade Agreement"" → **abbreviation**
+
+11. What film marked Robert Redford's directorial debut?  
+    → Answer: ""Ordinary People"" → **entity** (film title)
+
+12. Which Rockefeller was sometimes called ""JDR3""?  
+    → Answer: ""John D. Rockefeller III"" → **human being**
+
+13. In My Antonia, how is Mr. Shimerda out of place on the farm?  
+    → Answer: description of his character/traits → **description and abstract concept**
+
+14. What is the regular price?  
+    → Answer: likely a specific price or ""same as marked"" — but without context, probably numeric or abstract.  
+    Since it’s a",0,FALSE,"likely a specific price or ""same as marked"" — but without context, probably numeric or abstract.  
+    Since it’s a",high,19.13462496,689,512,1201
+12,trec_coarse,"In the above data, is label 'human being' more common, less common, or the same frequency as label 'location'? Give your final answer in the form 'Answer: human being is [X] location', where [X] is 'more common than', 'less common than', or 'same frequency as'.",['more common than'],"Let’s go through each question and assign the answer category based on likely correct answers.
+
+1. **What is one of the languages of the Sioux?**  
+   Answer: e.g., Lakota, Dakota, Nakota → language name → **entity** (a language is an entity, not a location, human, etc.)
+
+2. **What is the name of the Family Circus's dog?**  
+   Answer: Barfy or Sam → name of a dog → **entity** (non-human being entity)
+
+3. **What was the verdict in the 1925 trial of John T. Scopes?**  
+   Answer: Guilty → **description and abstract concept** (verdict is a concept/description)
+
+4. **What does snafu stand for?**  
+   Answer: Situation Normal: All Fouled Up → **abbreviation**
+
+5. **How many colors are there in a rainbow?**  
+   Answer: 7 → **numeric value**
+
+6. **Where did the saying ""rule of thumb"" come from?**  
+   Answer: possibly from carpentry or law → origin explanation → **description and abstract concept** (origin is abstract/description)
+
+7. **Who was the author of the famous fairy tale ""Snow White and Seven Dwarfs""?**  
+   Answer: Brothers Grimm (Jacob and Wilhelm Grimm) → **human being(s)**
+
+8. **When reading classified ads, what does EENTY: other stand for?**  
+   Answer: likely a typo/example of abbreviation in ads → **abbreviation**
+
+9. **What is RAM in the computer?**  
+   Answer: Random Access Memory → **abbreviation**
+
+10. **What does NAFTA stand for?**  
+    Answer: North American Free Trade Agreement → **abbreviation**
+
+11. **What film marked Robert Redford's directorial debut?**  
+    Answer: Ordinary People → **entity** (film title)
+
+12. **Which Rockefeller was sometimes called ""JDR3""?**  
+    Answer: John D. Rockefeller III → **human being**
+
+13. **In My Antonia, how is Mr. Shimerda out of place on the farm?**  
+    Answer: He was a cultured man, not a farmer → **description and abstract concept**
+
+14. **What is the regular price?**  
+    Answer: This is ambiguous without context, but likely asking for a price amount → **numeric value** (or possibly description if not numeric",0,FALSE,"This is ambiguous without context, but likely asking for a price amount → numeric value (or possibly description if not numeric",high,18.49310279,687,512,1199
+13,trec_coarse,"In the above data, is label 'human being' more common, less common, or the same frequency as label 'description and abstract concept'? Give your final answer in the form 'Answer: human being is [X] description and abstract concept', where [X] is 'more common than', 'less common than', or 'same frequency as'.",['less common than'],"Let’s go through each question and assign the answer category based on the likely answer type.
+
+1. What is one of the languages of the Sioux?  
+   → Likely answer: ""Lakota"" or ""Dakota"" (entity — a language name) → **entity**
+
+2. What is the name of the Family Circus's dog?  
+   → Likely answer: ""Barfy"" or ""Sam"" (entity — a pet’s name) → **entity**
+
+3. What was the verdict in the 1925 trial of John T. Scopes?  
+   → Likely answer: ""guilty"" (description/abstract concept) → **description and abstract concept**
+
+4. What does snafu stand for?  
+   → Answer: ""Situation Normal: All Fouled Up"" (abbreviation expansion) → **abbreviation**
+
+5. How many colors are there in a rainbow?  
+   → Answer: ""7"" (numeric value) → **numeric value**
+
+6. Where did the saying ""rule of thumb"" come from?  
+   → Answer: likely origin description (e.g., ""from an old law allowing husband to beat wife with stick no thicker than thumb"") → **description and abstract concept**
+
+7. Who was the author of the famous fairy tale ""Snow White and Seven Dwarfs""?  
+   → Answer: ""Brothers Grimm"" or ""Jacob and Wilhelm Grimm"" (human being(s)) → **human being**
+
+8. When reading classified ads, what does EENTY: other stand for?  
+   → Answer: likely abbreviation expansion → **abbreviation**
+
+9. What is RAM in the computer?  
+   → Answer: ""Random Access Memory"" (abbreviation expansion) → **abbreviation**
+
+10. What does NAFTA stand for?  
+    → Answer: ""North American Free Trade Agreement"" (abbreviation expansion) → **abbreviation**
+
+11. What film marked Robert Redford's directorial debut?  
+    → Answer: ""Ordinary People"" (entity — film title) → **entity**
+
+12. Which Rockefeller was sometimes called ""JDR3""?  
+    → Answer: ""John D. Rockefeller III"" (human being) → **human being**
+
+13. In My Antonia, how is Mr. Shimerda out of place on the farm?  
+    → Answer: description of his character/traits (e.g., ""he was a city tailor, not a farmer",0,FALSE,"description of his character/traits (e.g., ""he was a city tailor, not a farmer",high,18.94291997,693,512,1205
+14,trec_coarse,"In the above data, is label 'numeric value' more common, less common, or the same frequency as label 'location'? Give your final answer in the form 'Answer: numeric value is [X] location', where [X] is 'more common than', 'less common than', or 'same frequency as'.",['more common than'],"Let’s go through each question and assign the answer category based on the likely correct answer type.
+
+1. What is one of the languages of the Sioux?  
+   → Likely answer: e.g., “Lakota” or “Dakota” → **entity** (a language is an entity, not a location/human/etc.)
+
+2. What is the name of the Family Circus’s dog?  
+   → Likely answer: “Barfy” or “Sammy” → **entity** (specific named entity, not human)
+
+3. What was the verdict in the 1925 trial of John T. Scopes?  
+   → Answer: “guilty” → **description and abstract concept** (verdict is a concept/description)
+
+4. What does snafu stand for?  
+   → Answer: “Situation Normal: All Fouled Up” → **abbreviation**
+
+5. How many colors are there in a rainbow?  
+   → Answer: “7” → **numeric value**
+
+6. Where did the saying “rule of thumb” come from?  
+   → Answer: e.g., “from carpenters using thumb for measurement” or “English common law” → **description and abstract concept** (origin explanation)
+
+7. Who was the author of the famous fairy tale “Snow White and Seven Dwarfs”?  
+   → Answer: “Brothers Grimm” → **human being** (or possibly entity if considered collective, but usually human)
+
+8. When reading classified ads, what does EENTY: other stand for?  
+   → Answer: likely “Excellent, Exceptional, Near New, Top Quality” or similar → **abbreviation**
+
+9. What is RAM in the computer?  
+   → Answer: “Random Access Memory” → **abbreviation**
+
+10. What does NAFTA stand for?  
+    → Answer: “North American Free Trade Agreement” → **abbreviation**
+
+11. What film marked Robert Redford’s directorial debut?  
+    → Answer: “Ordinary People” → **entity** (film title)
+
+12. Which Rockefeller was sometimes called “JDR3”?  
+    → Answer: “John D. Rockefeller III” → **human being**
+
+13. In My Antonia, how is Mr. Shimerda out of place on the farm?  
+    → Answer: e.g., “He was a city person / cultured / not suited for labor” → **description and abstract concept",0,FALSE,"e.g., “He was a city person / cultured / not suited for labor” → description and abstract concept",high,19.29517412,687,512,1199
+15,trec_coarse,"In the above data, is label 'numeric value' more common, less common, or the same frequency as label 'description and abstract concept'? Give your final answer in the form 'Answer: numeric value is [X] description and abstract concept', where [X] is 'more common than', 'less common than', or 'same frequency as'.",['less common than'],"Let's go through each question and assign the answer category.
+
+1. What is one of the languages of the Sioux?  
+   → Likely a language name (e.g., Lakota, Dakota). That’s an **entity** (language as a named entity).
+
+2. What is the name of the Family Circus's dog?  
+   → Name of a character (Barney or similar). That’s an **entity** (specific named fictional entity).
+
+3. What was the verdict in the 1925 trial of John T. Scopes?  
+   → ""Guilty"" (or similar). That’s a **description and abstract concept** (verdict description).
+
+4. What does snafu stand for?  
+   → Expansion of an acronym. That’s an **abbreviation** (stands for ""Situation Normal: All Fouled Up"").
+
+5. How many colors are there in a rainbow?  
+   → ""7"" (or sometimes 6, but common answer is 7). That’s a **numeric value**.
+
+6. Where did the saying ""rule of thumb"" come from?  
+   → Origin explanation (e.g., ""from carpentry using thumb to measure""). That’s a **description and abstract concept**.
+
+7. Who was the author of the famous fairy tale ""Snow White and Seven Dwarfs""?  
+   → Brothers Grimm (or specific author). That’s a **human being**.
+
+8. When reading classified ads, what does EENTY: other stand for?  
+   → Expansion of abbreviation (likely ""Excellent condition, no tears or yellowing"" or similar). That’s **abbreviation**.
+
+9. What is RAM in the computer?  
+   → Explanation (Random Access Memory). That’s **abbreviation** (stands for something).
+
+10. What does NAFTA stand for?  
+    → North American Free Trade Agreement. That’s **abbreviation**.
+
+11. What film marked Robert Redford's directorial debut?  
+    → ""Ordinary People"". That’s an **entity** (film title).
+
+12. Which Rockefeller was sometimes called ""JDR3""?  
+    → John D. Rockefeller III. That’s a **human being**.
+
+13. In My Antonia, how is Mr. Shimerda out of place on the farm?  
+    → Description (e.g., ""he was a city person, not suited for farm work""). That’s **description and abstract concept**.
+
+14",0,FALSE,"other stand for?  
+   → Expansion of abbreviation (likely ""Excellent condition, no tears or yellowing"" or similar). That’s abbreviation.
+
+9. What is RAM in the computer?  
+   → Explanation (Random Access Memory). That’s abbreviation (stands for something).
+
+10. What does NAFTA stand for?  
+    → North American Free Trade Agreement. That’s abbreviation.
+
+11. What film marked Robert Redford's directorial debut?  
+    → ""Ordinary People"". That’s an entity (film title).
+
+12. Which Rockefeller was sometimes called ""JDR3""?  
+    → John D. Rockefeller III. That’s a human being.
+
+13. In My Antonia, how is Mr. Shimerda out of place on the farm?  
+    → Description (e.g., ""he was a city person, not suited for farm work""). That’s description and abstract concept.
+
+14",med,18.572294,693,512,1205
+16,trec_coarse,"In the above data, is label 'location' more common, less common, or the same frequency as label 'description and abstract concept'? Give your final answer in the form 'Answer: location is [X] description and abstract concept', where [X] is 'more common than', 'less common than', or 'same frequency as'.",['less common than'],"Let’s go through each question and assign the likely answer category based on the question type and typical answer.
+
+1. What is one of the languages of the Sioux?  
+   → Answer: e.g., Lakota, Dakota (entity — a language is an entity)  
+   **Category: entity**
+
+2. What is the name of the Family Circus’s dog?  
+   → Answer: e.g., Barfy, Sam (entity — a named pet)  
+   **Category: entity**
+
+3. What was the verdict in the 1925 trial of John T. Scopes?  
+   → Answer: Guilty (description/abstract concept — a verdict is a concept)  
+   **Category: description and abstract concept**
+
+4. What does snafu stand for?  
+   → Answer: Situation Normal All Fouled Up (abbreviation expansion)  
+   **Category: abbreviation**
+
+5. How many colors are there in a rainbow?  
+   → Answer: 7 (numeric value)  
+   **Category: numeric value**
+
+6. Where did the saying “rule of thumb” come from?  
+   → Answer: e.g., from carpentry, from common practice (description/abstract concept — origin explanation)  
+   **Category: description and abstract concept**
+
+7. Who was the author of the famous fairy tale “Snow White and Seven Dwarfs”?  
+   → Answer: Brothers Grimm (human beings)  
+   **Category: human being**
+
+8. When reading classified ads, what does EENTY: other stand for?  
+   → Answer: (likely abbreviation expansion)  
+   **Category: abbreviation**
+
+9. What is RAM in the computer?  
+   → Answer: Random Access Memory (abbreviation expansion)  
+   **Category: abbreviation**
+
+10. What does NAFTA stand for?  
+    → Answer: North American Free Trade Agreement (abbreviation expansion)  
+    **Category: abbreviation**
+
+11. What film marked Robert Redford’s directorial debut?  
+    → Answer: Ordinary People (entity — film title)  
+    **Category: entity**
+
+12. Which Rockefeller was sometimes called “JDR3”?  
+    → Answer: John D. Rockefeller III (human being)  
+    **Category: human being**
+
+13. In My Antonia, how is Mr. Shimerda out of place on the farm?  
+    → Answer: e.g., he was a city person, not suited for farming (description/abstract concept — explanation)  
+",0,FALSE,"e.g., he was a city person, not suited for farming (description/abstract concept — explanation)",high,19.05076313,691,512,1203
+17,trec_coarse,"In the above data, how many data points should be classified as label 'abbreviation'? Give your final answer in the form 'Answer: number'.",[4],"Let’s go through each question and classify the answer type based on what the question is asking for.  
+
+**Categories:**  
+- **abbreviation** – asking what an acronym/abbreviation stands for.  
+- **entity** – organization, brand, object, animal, non-human character, etc.  
+- **human being** – person (author, historical figure, etc.).  
+- **numeric value** – number, count, price, etc.  
+- **location** – place, origin of phrase (if literal place).  
+- **description and abstract concept** – explanation, reason, origin of phrase (if conceptual), definition, abstract idea.  
+
+---
+
+1. **What is one of the languages of the Sioux?**  
+   Answer: e.g., Lakota, Dakota (a language name) → **entity** (language as a named thing).  
+
+2. **What is the name of the Family Circus's dog?**  
+   Answer: e.g., Barfy (a pet’s name) → **entity** (non-human character).  
+
+3. **What was the verdict in the 1925 trial of John T. Scopes?**  
+   Answer: Guilty (verdict is a judgment) → **description and abstract concept** (not numeric, not a person, etc.).  
+
+4. **What does snafu stand for?**  
+   Answer: Situation Normal: All Fouled Up → **abbreviation** (explicitly asking for expansion of acronym).  
+
+5. **How many colors are there in a rainbow?**  
+   Answer: 7 → **numeric value**.  
+
+6. **Where did the saying “rule of thumb” come from?**  
+   Answer: Origin explanation, e.g., from carpentry using thumb to measure → **description and abstract concept** (origin of phrase).  
+
+7. **Who was the author of the famous fairy tale “Snow White and Seven Dwarfs”?**  
+   Answer: Brothers Grimm (or specific person) → **human being**.  
+
+8. **When reading classified ads, what does EENTY : other stand for?**  
+   Answer: Expansion of abbreviation EENTY → **abbreviation**.  
+
+9. **What is RAM in the computer?**  
+   Answer: Random Access Memory (definition/expansion) → **abbreviation** (asking what RAM stands for/means in computing).  
+
+10. **What does NAFTA stand for?**  
+   ",0,FALSE,"Random Access Memory (definition/expansion) → abbreviation (asking what RAM stands for/means in computing).  
+
+10. What does NAFTA stand for?",low,19.00158787,653,512,1165
+18,trec_coarse,"In the above data, how many data points should be classified as label 'entity'? Give your final answer in the form 'Answer: number'.",[3],"Let’s go through each question and classify the answer type based on the question’s likely answer.  
+
+**Categories:**  
+- **abbreviation** – answer is an abbreviation expansion or acronym meaning.  
+- **entity** – answer is a named non-human thing (organization, brand, animal, object, law, etc.).  
+- **human being** – answer is a person’s name.  
+- **numeric value** – answer is a number.  
+- **location** – answer is a place.  
+- **description and abstract concept** – answer is a definition, explanation, phrase, or abstract idea.  
+
+---
+
+1. **What is one of the languages of the Sioux?**  
+   Answer example: “Lakota” (a language) → **entity** (language as a named thing).  
+
+2. **What is the name of the Family Circus’s dog?**  
+   Answer: “Barfy” or “Sammy” (pet name) → **entity** (animal character).  
+
+3. **What was the verdict in the 1925 trial of John T. Scopes?**  
+   Answer: “Guilty” (verdict) → **description and abstract concept** (legal outcome, not numeric, not a person).  
+
+4. **What does snafu stand for?**  
+   Answer: “Situation Normal: All Fouled Up” → **abbreviation**.  
+
+5. **How many colors are there in a rainbow?**  
+   Answer: “7” → **numeric value**.  
+
+6. **Where did the saying “rule of thumb” come from?**  
+   Answer: “From an old law allowing a man to beat his wife with a stick no thicker than his thumb” (origin explanation) → **description and abstract concept**.  
+
+7. **Who was the author of the famous fairy tale “Snow White and Seven Dwarfs”?**  
+   Answer: “The Brothers Grimm” (or Wilhelm Grimm, Jacob Grimm) → **human being(s)**.  
+
+8. **When reading classified ads, what does EENTY: other stand for?**  
+   Answer: likely “Excellent, Except, New, Toy, Other” (acronym expansion) → **abbreviation**.  
+
+9. **What is RAM in the computer?**  
+   Answer: “Random Access Memory” (definition/expansion) → **abbreviation** (though could be “description” if explaining function, but",0,FALSE,"“Random Access Memory” (definition/expansion) → abbreviation (though could be “description” if explaining function, but",low,19.63351297,651,512,1163
+19,trec_coarse,"In the above data, how many data points should be classified as label 'human being'? Give your final answer in the form 'Answer: number'.",[2],"Let’s go through each question and classify the answer type based on what the question is asking for.  
+
+**Categories:**  
+- abbreviation  
+- entity  
+- human being  
+- numeric value  
+- location  
+- description and abstract concept  
+
+---
+
+1. **What is one of the languages of the Sioux?**  
+   → Answer: e.g., Lakota, Dakota (a language name) → **description and abstract concept** (language is an abstract concept, not a person, place, abbreviation, etc.)  
+
+2. **What is the name of the Family Circus's dog?**  
+   → Answer: e.g., Barfy, etc. (a pet’s name) → **entity** (specific named animal character)  
+
+3. **What was the verdict in the 1925 trial of John T. Scopes?**  
+   → Answer: “guilty” (or similar) → **description and abstract concept** (verdict is an abstract outcome)  
+
+4. **What does snafu stand for?**  
+   → Answer: “Situation Normal: All Fouled Up” (or similar) → **abbreviation**  
+
+5. **How many colors are there in a rainbow?**  
+   → Answer: “7” (numeric) → **numeric value**  
+
+6. **Where did the saying “rule of thumb” come from?**  
+   → Answer: e.g., “from an old law allowing husband to beat wife with stick no thicker than thumb” (origin explanation) → **description and abstract concept**  
+
+7. **Who was the author of the famous fairy tale “Snow White and Seven Dwarfs”?**  
+   → Answer: Brothers Grimm (or specific person) → **human being**  
+
+8. **When reading classified ads, what does EENTY : other stand for?**  
+   → Answer: likely expansion of abbreviation → **abbreviation**  
+
+9. **What is RAM in the computer?**  
+   → Answer: “Random Access Memory” (expansion of term) → **abbreviation**  
+
+10. **What does NAFTA stand for?**  
+    → Answer: “North American Free Trade Agreement” → **abbreviation**  
+
+11. **What film marked Robert Redford’s directorial debut?**  
+    → Answer: “Ordinary People” (film title) → **entity**  
+
+12. **Which Rockefeller was sometimes called “JDR3”?**  
+    →",0,FALSE,"“Ordinary People” (film title) → entity  
+
+12. Which Rockefeller was sometimes called “JDR3”?  
+    →",low,18.80696511,652,512,1164

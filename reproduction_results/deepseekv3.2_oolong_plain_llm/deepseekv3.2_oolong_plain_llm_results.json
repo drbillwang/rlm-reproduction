@@ -1,0 +1,356 @@
+{
+  "experiment": "oolong_plain_llm",
+  "model": "deepseek-chat",
+  "method": "plain_llm",
+  "dataset_filter": "trec_coarse",
+  "num_samples": 20,
+  "accuracy": 0.0,
+  "avg_score": 0.0,
+  "correct_count": 0,
+  "avg_execution_time": 18.996365630626677,
+  "total_input_tokens": 13635,
+  "total_output_tokens": 10240,
+  "total_tokens": 23875,
+  "results": [
+    {
+      "sample_id": 0,
+      "dataset": "trec_coarse",
+      "question": "In the above data, which of the labels is the most common? Give your final answer in the form 'Label: answer' where answer is one of the labels: abbreviation, entity, human being, numeric value, location, description and abstract concept.",
+      "gold_answer": "['abbreviation']",
+      "llm_response": "Let\u2019s go through each question and assign the most likely answer category based on the question\u2019s intent.  \n\n1. **What is one of the languages of the Sioux?**  \n   \u2192 Answer example: \u201cLakota\u201d (entity \u2014 a language is an entity)  \n\n2. **What is the name of the Family Circus\u2019s dog?**  \n   \u2192 Answer example: \u201cBarfy\u201d or \u201cSammy\u201d (entity \u2014 a named pet)  \n\n3. **What was the verdict in the 1925 trial of John T. Scopes?**  \n   \u2192 Answer example: \u201cGuilty\u201d (description and abstract concept \u2014 a verdict)  \n\n4. **What does snafu stand for?**  \n   \u2192 Answer example: \u201cSituation Normal: All Fouled Up\u201d (abbreviation)  \n\n5. **How many colors are there in a rainbow?**  \n   \u2192 Answer example: \u201c7\u201d (numeric value)  \n\n6. **Where did the saying \u201crule of thumb\u201d come from?**  \n   \u2192 Answer example: \u201cFrom an old practice of using the thumb to approximate measurements\u201d (description and abstract concept \u2014 origin explanation)  \n\n7. **Who was the author of the famous fairy tale \u201cSnow White and Seven Dwarfs\u201d?**  \n   \u2192 Answer example: \u201cThe Brothers Grimm\u201d (human being)  \n\n8. **When reading classified ads, what does EENTY : other stand for?**  \n   \u2192 Answer example: \u201cExcellent, Exceptional, Near New, Top Quality\u201d (abbreviation)  \n\n9. **What is RAM in the computer?**  \n   \u2192 Answer example: \u201cRandom Access Memory\u201d (abbreviation)  \n\n10. **What does NAFTA stand for?**  \n    \u2192 Answer example: \u201cNorth American Free Trade Agreement\u201d (abbreviation)  \n\n11. **What film marked Robert Redford\u2019s directorial debut?**  \n    \u2192 Answer example: \u201cOrdinary People\u201d (entity \u2014 a film title)  \n\n12. **Which Rockefeller was sometimes called \u201cJDR3\u201d?**  \n    \u2192 Answer example: \u201cJohn D. Rockefeller III\u201d (human being)  \n\n13. **In My Antonia, how is Mr. Shimerda out of place on the farm?**  \n    \u2192 Answer example: \u201cHe was a cultured city man unused to manual labor\u201d (description and abstract concept)  \n\n14. **What is the regular price?**  \n    \u2192 Answer example",
+      "score": 0.0,
+      "correct": false,
+      "extracted_answer": "\u201cHe was a cultured city man unused to manual labor\u201d (description and abstract concept)  \n\n14. What is the regular price?  \n    \u2192 Answer example",
+      "parse_confidence": "med",
+      "execution_time": 19.29733920097351,
+      "usage": {
+        "input_tokens": 672,
+        "output_tokens": 512,
+        "total_tokens": 1184
+      }
+    },
+    {
+      "sample_id": 1,
+      "dataset": "trec_coarse",
+      "question": "In the above data, which of the labels is the least common? Give your final answer in the form 'Label: answer' where answer is one of the labels: abbreviation, entity, human being, numeric value, location, description and abstract concept.",
+      "gold_answer": "['location']",
+      "llm_response": "Let\u2019s go through each question and assign the most likely label for its answer.  \n\n**1. What is one of the languages of the Sioux?**  \nAnswer example: Lakota, Dakota, Nakota \u2192 these are languages (entities, but language names are usually considered \u201centity\u201d or \u201cdescription and abstract concept\u201d? Actually, a named language is an entity, but \u201cdescription and abstract concept\u201d is for non-named abstract ideas. I\u2019d say entity.)  \n\n**2. What is the name of the Family Circus\u2019s dog?**  \nAnswer: Barfy or Sam? Actually, it\u2019s \u201cBarfy\u201d in some strips, but commonly known as \u201cSam\u201d or \u201cDolly\u201d? Wait, known fact: Family Circus dog is \u201cSam\u201d (or sometimes \u201cBarfy\u201d early on). This is a named entity (dog\u2019s name) \u2192 entity.  \n\n**3. What was the verdict in the 1925 trial of John T. Scopes?**  \nAnswer: Guilty \u2192 description and abstract concept (verdict type).  \n\n**4. What does snafu stand for?**  \nAnswer: Situation Normal All Fouled Up \u2192 abbreviation.  \n\n**5. How many colors are there in a rainbow?**  \nAnswer: 7 \u2192 numeric value.  \n\n**6. Where did the saying \u201crule of thumb\u201d come from?**  \nAnswer: Possibly from carpentry using thumb for measurement, or from old English law. This asks for origin explanation \u2192 description and abstract concept.  \n\n**7. Who was the author of the famous fairy tale \u201cSnow White and Seven Dwarfs\u201d?**  \nAnswer: Brothers Grimm (Jacob and Wilhelm Grimm) \u2192 human being(s).  \n\n**8. When reading classified ads, what does EENTY: other stand for?**  \nAnswer: \u201cExcellent condition, no tears or yellowing\u201d (in collectibles ads) \u2192 abbreviation.  \n\n**9. What is RAM in the computer?**  \nAnswer: Random Access Memory \u2192 abbreviation.  \n\n**10. What does NAFTA stand for?**  \nAnswer: North American Free Trade Agreement \u2192 abbreviation.  \n\n**11. What film marked Robert Redford\u2019s directorial debut?**  \nAnswer: Ordinary People \u2192 entity (film title).  \n\n**12. Which Rockefeller was sometimes called \u201cJDR3\u201d?**  \nAnswer: John D. Rockefeller III \u2192 human being.  \n\n**13. In My Antonia, how is Mr. Shimerda out of place on",
+      "score": 0.0,
+      "correct": false,
+      "extracted_answer": "John D. Rockefeller III \u2192 human being.  \n\n13. In My Antonia, how is Mr. Shimerda out of place on",
+      "parse_confidence": "high",
+      "execution_time": 18.996315956115723,
+      "usage": {
+        "input_tokens": 672,
+        "output_tokens": 512,
+        "total_tokens": 1184
+      }
+    },
+    {
+      "sample_id": 2,
+      "dataset": "trec_coarse",
+      "question": "In the above data, is label 'abbreviation' more common, less common, or the same frequency as label 'entity'? Give your final answer in the form 'Answer: abbreviation is [X] entity', where [X] is 'more common than', 'less common than', or 'same frequency as'.",
+      "gold_answer": "['more common than']",
+      "llm_response": "Let\u2019s go through each question and assign the answer category based on the likely answer type.\n\n1. What is one of the languages of the Sioux?  \n   \u2192 Answer: e.g., Lakota, Dakota (language name) \u2192 **entity** (language is an entity, not a human, number, etc.)\n\n2. What is the name of the Family Circus\u2019s dog?  \n   \u2192 Answer: e.g., Barfy or Sam (specific name) \u2192 **entity** (named animal character)\n\n3. What was the verdict in the 1925 trial of John T. Scopes?  \n   \u2192 Answer: Guilty (verdict type) \u2192 **description and abstract concept**\n\n4. What does snafu stand for?  \n   \u2192 Answer: Situation Normal: All Fouled Up (expansion of acronym) \u2192 **abbreviation**\n\n5. How many colors are there in a rainbow?  \n   \u2192 Answer: 7 (number) \u2192 **numeric value**\n\n6. Where did the saying \u201crule of thumb\u201d come from?  \n   \u2192 Answer: e.g., from carpentry, from old law (origin explanation) \u2192 **description and abstract concept**\n\n7. Who was the author of the famous fairy tale \u201cSnow White and Seven Dwarfs\u201d?  \n   \u2192 Answer: Brothers Grimm (or specific person) \u2192 **human being**\n\n8. When reading classified ads, what does EENTY: other stand for?  \n   \u2192 Answer: likely expansion of abbreviation \u2192 **abbreviation**\n\n9. What is RAM in the computer?  \n   \u2192 Answer: Random Access Memory (expansion of acronym) \u2192 **abbreviation**\n\n10. What does NAFTA stand for?  \n    \u2192 Answer: North American Free Trade Agreement (expansion) \u2192 **abbreviation**\n\n11. What film marked Robert Redford\u2019s directorial debut?  \n    \u2192 Answer: Ordinary People (film title) \u2192 **entity**\n\n12. Which Rockefeller was sometimes called \u201cJDR3\u201d?  \n    \u2192 Answer: John D. Rockefeller III (person) \u2192 **human being**\n\n13. In My Antonia, how is Mr. Shimerda out of place on the farm?  \n    \u2192 Answer: e.g., he was a city person, not a farmer (description) \u2192 **description and abstract concept**\n\n14. What is the regular price?  \n    \u2192 Answer: e.g., $20 (numeric value) or \u201cthe standard price\u201d (description) \u2014 but likely numeric value if specific, but",
+      "score": 0.0,
+      "correct": false,
+      "extracted_answer": "e.g., $20 (numeric value) or \u201cthe standard price\u201d (description) \u2014 but likely numeric value if specific, but",
+      "parse_confidence": "high",
+      "execution_time": 18.790727853775024,
+      "usage": {
+        "input_tokens": 687,
+        "output_tokens": 512,
+        "total_tokens": 1199
+      }
+    },
+    {
+      "sample_id": 3,
+      "dataset": "trec_coarse",
+      "question": "In the above data, is label 'abbreviation' more common, less common, or the same frequency as label 'human being'? Give your final answer in the form 'Answer: abbreviation is [X] human being', where [X] is 'more common than', 'less common than', or 'same frequency as'.",
+      "gold_answer": "['more common than']",
+      "llm_response": "Let\u2019s go through each question and assign the answer category based on the likely correct answer type.\n\n1. **What is one of the languages of the Sioux?**  \n   Answer: e.g., Lakota, Dakota \u2014 these are **entity** (language names).  \n   Category: *entity*.\n\n2. **What is the name of the Family Circus's dog?**  \n   Answer: e.g., Barfy \u2014 a name of a pet.  \n   Category: *entity* (specific named thing, not human).\n\n3. **What was the verdict in the 1925 trial of John T. Scopes?**  \n   Answer: Guilty \u2014 a **description and abstract concept** (verdict type).  \n   Category: *description and abstract concept*.\n\n4. **What does snafu stand for?**  \n   Answer: Situation Normal: All Fouled Up \u2014 expansion of an acronym.  \n   Category: *abbreviation*.\n\n5. **How many colors are there in a rainbow?**  \n   Answer: 7 \u2014 a number.  \n   Category: *numeric value*.\n\n6. **Where did the saying \"rule of thumb\" come from?**  \n   Answer: e.g., from an old law about wife-beating with a stick no thicker than a thumb \u2014 an origin explanation.  \n   Category: *description and abstract concept*.\n\n7. **Who was the author of the famous fairy tale \"Snow White and Seven Dwarfs\"?**  \n   Answer: The Brothers Grimm (Jacob and Wilhelm Grimm) \u2014 people.  \n   Category: *human being*.\n\n8. **When reading classified ads, what does EENTY: other stand for?**  \n   Answer: Explanation of abbreviation.  \n   Category: *abbreviation*.\n\n9. **What is RAM in the computer?**  \n   Answer: Random Access Memory \u2014 expansion of acronym.  \n   Category: *abbreviation*.\n\n10. **What does NAFTA stand for?**  \n    Answer: North American Free Trade Agreement \u2014 expansion of acronym.  \n    Category: *abbreviation*.\n\n11. **What film marked Robert Redford's directorial debut?**  \n    Answer: *Ordinary People* \u2014 a film title.  \n    Category: *entity*.\n\n12. **Which Rockefeller was sometimes called \"JDR3\"?**  \n    Answer: John D. Rockefeller III \u2014 a person.  \n    Category: *human being*.\n\n13.",
+      "score": 0.0,
+      "correct": false,
+      "extracted_answer": "human being.\n\n13.",
+      "parse_confidence": "vhigh",
+      "execution_time": 17.660424947738647,
+      "usage": {
+        "input_tokens": 689,
+        "output_tokens": 512,
+        "total_tokens": 1201
+      }
+    },
+    {
+      "sample_id": 4,
+      "dataset": "trec_coarse",
+      "question": "In the above data, is label 'abbreviation' more common, less common, or the same frequency as label 'numeric value'? Give your final answer in the form 'Answer: abbreviation is [X] numeric value', where [X] is 'more common than', 'less common than', or 'same frequency as'.",
+      "gold_answer": "['more common than']",
+      "llm_response": "Let\u2019s go through each question and assign the answer category based on the likely correct answer type.\n\n1. What is one of the languages of the Sioux?  \n   \u2192 Likely a language name (e.g., Lakota, Dakota) \u2192 **entity**  \n\n2. What is the name of the Family Circus\u2019s dog?  \n   \u2192 Name of a character (e.g., Barfy, Sam) \u2192 **entity**  \n\n3. What was the verdict in the 1925 trial of John T. Scopes?  \n   \u2192 \u201cGuilty\u201d (or similar) \u2192 **description and abstract concept**  \n\n4. What does snafu stand for?  \n   \u2192 Expansion of an acronym \u2192 **abbreviation**  \n\n5. How many colors are there in a rainbow?  \n   \u2192 \u201c7\u201d \u2192 **numeric value**  \n\n6. Where did the saying \u201crule of thumb\u201d come from?  \n   \u2192 Origin explanation \u2192 **description and abstract concept**  \n\n7. Who was the author of the famous fairy tale \u201cSnow White and Seven Dwarfs\u201d?  \n   \u2192 Person (e.g., Brothers Grimm) \u2192 **human being**  \n\n8. When reading classified ads, what does EENTY : other stand for?  \n   \u2192 Expansion of abbreviation \u2192 **abbreviation**  \n\n9. What is RAM in the computer?  \n   \u2192 Explanation (Random Access Memory) \u2192 **abbreviation**  \n\n10. What does NAFTA stand for?  \n    \u2192 Expansion of acronym \u2192 **abbreviation**  \n\n11. What film marked Robert Redford\u2019s directorial debut?  \n    \u2192 Movie title \u2192 **entity**  \n\n12. Which Rockefeller was sometimes called \u201cJDR3\u201d?  \n    \u2192 Person (John D. Rockefeller III) \u2192 **human being**  \n\n13. In My Antonia, how is Mr. Shimerda out of place on the farm?  \n    \u2192 Descriptive explanation \u2192 **description and abstract concept**  \n\n14. What is the regular price?  \n    \u2192 Likely a specific price or \u201cMSRP\u201d concept \u2192 **description and abstract concept** (or numeric if specific, but question is generic, so abstract)  \n\n---\n\n**Tally:**  \n- abbreviation: Q4, Q8, Q9, Q10 \u2192 **4**  \n- entity: Q1, Q2, Q11 \u2192 **3**  \n- human being: Q7, Q12 \u2192 **2**  \n- numeric value: Q5 \u2192 **1**  \n-",
+      "score": 0.0,
+      "correct": false,
+      "extracted_answer": "Q5 \u2192 1  \n-",
+      "parse_confidence": "vhigh",
+      "execution_time": 18.366331815719604,
+      "usage": {
+        "input_tokens": 689,
+        "output_tokens": 512,
+        "total_tokens": 1201
+      }
+    },
+    {
+      "sample_id": 5,
+      "dataset": "trec_coarse",
+      "question": "In the above data, is label 'abbreviation' more common, less common, or the same frequency as label 'location'? Give your final answer in the form 'Answer: abbreviation is [X] location', where [X] is 'more common than', 'less common than', or 'same frequency as'.",
+      "gold_answer": "['more common than']",
+      "llm_response": "Let\u2019s go through each question and assign the answer category based on the likely answer type.\n\n1. What is one of the languages of the Sioux?  \n   \u2192 Likely answer: e.g., \"Lakota\" or \"Dakota\" \u2192 **entity** (language name is an entity, not a location or human)\n\n2. What is the name of the Family Circus's dog?  \n   \u2192 Likely answer: \"Barfy\" or \"Sammy\" \u2192 **entity** (specific named entity, not human)\n\n3. What was the verdict in the 1925 trial of John T. Scopes?  \n   \u2192 Likely answer: \"guilty\" \u2192 **description and abstract concept** (verdict description)\n\n4. What does snafu stand for?  \n   \u2192 Answer: \"Situation Normal: All Fouled Up\" \u2192 **abbreviation** (expansion of acronym)\n\n5. How many colors are there in a rainbow?  \n   \u2192 Answer: \"7\" \u2192 **numeric value**\n\n6. Where did the saying \"rule of thumb\" come from?  \n   \u2192 Likely answer: \"from an old law allowing husband to beat wife with stick no thicker than thumb\" \u2192 **description and abstract concept** (origin explanation)\n\n7. Who was the author of the famous fairy tale \"Snow White and Seven Dwarfs\"?  \n   \u2192 Answer: \"Brothers Grimm\" or \"Wilhelm Grimm\" etc. \u2192 **human being**\n\n8. When reading classified ads, what does EENTY: other stand for?  \n   \u2192 Likely answer: \"Excellent, Except for Normal Tiny (scratches)\" or similar \u2192 **abbreviation** (expansion of abbreviation)\n\n9. What is RAM in the computer?  \n   \u2192 Answer: \"Random Access Memory\" \u2192 **abbreviation** (expansion of acronym)\n\n10. What does NAFTA stand for?  \n    \u2192 Answer: \"North American Free Trade Agreement\" \u2192 **abbreviation**\n\n11. What film marked Robert Redford's directorial debut?  \n    \u2192 Answer: \"Ordinary People\" \u2192 **entity** (film title)\n\n12. Which Rockefeller was sometimes called \"JDR3\"?  \n    \u2192 Answer: \"John D. Rockefeller III\" \u2192 **human being**\n\n13. In My Antonia, how is Mr. Shimerda out of place on the farm?  \n    \u2192 Answer: \"He was a cultured city man\" or similar \u2192 **description and abstract concept**\n\n",
+      "score": 0.0,
+      "correct": false,
+      "extracted_answer": "\"He was a cultured city man\" or similar \u2192 description and abstract concept",
+      "parse_confidence": "high",
+      "execution_time": 18.612657070159912,
+      "usage": {
+        "input_tokens": 687,
+        "output_tokens": 512,
+        "total_tokens": 1199
+      }
+    },
+    {
+      "sample_id": 6,
+      "dataset": "trec_coarse",
+      "question": "In the above data, is label 'abbreviation' more common, less common, or the same frequency as label 'description and abstract concept'? Give your final answer in the form 'Answer: abbreviation is [X] description and abstract concept', where [X] is 'more common than', 'less common than', or 'same frequency as'.",
+      "gold_answer": "['more common than']",
+      "llm_response": "Let's go through each question and assign the answer category.\n\n1. What is one of the languages of the Sioux?  \n   Answer: e.g., Lakota, Dakota, Nakota \u2192 language name \u2192 **entity** (since it's a named language, not an abstract description of it).\n\n2. What is the name of the Family Circus's dog?  \n   Answer: Barfy or Sam \u2192 name of a character \u2192 **entity**.\n\n3. What was the verdict in the 1925 trial of John T. Scopes?  \n   Answer: Guilty \u2192 **description and abstract concept** (it's a verdict type, not numeric, not location, not abbreviation, not a named entity like a person, but a legal outcome).\n\n4. What does snafu stand for?  \n   Answer: Situation Normal: All Fouled Up \u2192 expansion of acronym \u2192 **abbreviation**.\n\n5. How many colors are there in a rainbow?  \n   Answer: 7 \u2192 **numeric value**.\n\n6. Where did the saying \"rule of thumb\" come from?  \n   Answer: e.g., from an old law allowing husband to beat wife with stick no thicker than thumb \u2192 origin explanation \u2192 **description and abstract concept**.\n\n7. Who was the author of the famous fairy tale \"Snow White and Seven Dwarfs\"?  \n   Answer: Brothers Grimm (Jacob and Wilhelm Grimm) \u2192 **human being(s)**.\n\n8. When reading classified ads, what does EENTY: other stand for?  \n   Answer: \"Excellent condition, no tears or yellowing\" (or similar expansion) \u2192 **abbreviation**.\n\n9. What is RAM in the computer?  \n   Answer: Random Access Memory \u2192 expansion of acronym \u2192 **abbreviation**.\n\n10. What does NAFTA stand for?  \n    Answer: North American Free Trade Agreement \u2192 **abbreviation**.\n\n11. What film marked Robert Redford's directorial debut?  \n    Answer: Ordinary People \u2192 **entity** (film title).\n\n12. Which Rockefeller was sometimes called \"JDR3\"?  \n    Answer: John D. Rockefeller III \u2192 **human being**.\n\n13. In My Antonia, how is Mr. Shimerda out of place on the farm?  \n    Answer: He was a cultured city man, not suited for farm labor \u2192 **description and abstract concept**.\n\n14. What is the regular price?  \n    Answer: e.g., $19.99 or \"the standard retail price\" \u2192 likely **numeric value** or **description",
+      "score": 0.0,
+      "correct": false,
+      "extracted_answer": "e.g., $19.99 or \"the standard retail price\" \u2192 likely numeric value or description",
+      "parse_confidence": "high",
+      "execution_time": 20.029040813446045,
+      "usage": {
+        "input_tokens": 693,
+        "output_tokens": 512,
+        "total_tokens": 1205
+      }
+    },
+    {
+      "sample_id": 7,
+      "dataset": "trec_coarse",
+      "question": "In the above data, is label 'entity' more common, less common, or the same frequency as label 'human being'? Give your final answer in the form 'Answer: entity is [X] human being', where [X] is 'more common than', 'less common than', or 'same frequency as'.",
+      "gold_answer": "['more common than']",
+      "llm_response": "Let\u2019s go through each question and assign the answer category based on the likely answer type.  \n\n**1. What is one of the languages of the Sioux?**  \nAnswer example: Lakota, Dakota, Nakota \u2192 these are languages (entity, not location, not human).  \nCategory: **entity** (specific named language).  \n\n**2. What is the name of the Family Circus\u2019s dog?**  \nAnswer: Barfy (or sometimes Sam) \u2192 name of a character (entity, but a non-human named entity).  \nCategory: **entity** (named animal character).  \n\n**3. What was the verdict in the 1925 trial of John T. Scopes?**  \nAnswer: Guilty \u2192 description/abstract concept (verdict type).  \nCategory: **description and abstract concept**.  \n\n**4. What does snafu stand for?**  \nAnswer: Situation Normal: All Fouled Up \u2192 expansion of acronym.  \nCategory: **abbreviation**.  \n\n**5. How many colors are there in a rainbow?**  \nAnswer: 7 (or sometimes 6 depending on culture, but standard answer is 7) \u2192 numeric.  \nCategory: **numeric value**.  \n\n**6. Where did the saying \u201crule of thumb\u201d come from?**  \nAnswer: possibly from carpentry (using thumb to measure) or law (old common law) \u2192 origin explanation.  \nCategory: **description and abstract concept** (explanation of origin).  \n\n**7. Who was the author of the famous fairy tale \u201cSnow White and Seven Dwarfs\u201d?**  \nAnswer: Brothers Grimm (Jacob and Wilhelm Grimm) \u2192 human beings.  \nCategory: **human being**.  \n\n**8. When reading classified ads, what does EENTY: other stand for?**  \nAnswer: likely an abbreviation (maybe \u201cExcellent condition, no tears or yellowing\u201d or similar classified ad code) \u2192 abbreviation.  \nCategory: **abbreviation**.  \n\n**9. What is RAM in the computer?**  \nAnswer: Random Access Memory \u2192 abbreviation expansion.  \nCategory: **abbreviation**.  \n\n**10. What does NAFTA stand for?**  \nAnswer: North American Free Trade Agreement \u2192 abbreviation expansion.  \nCategory: **abbreviation**.  \n\n**11. What film marked Robert Redford\u2019s directorial debut?**  \nAnswer: Ordinary People \u2192 film title (entity).  \nCategory: **entity** (named film).  \n\n**12. Which Rockefeller was sometimes",
+      "score": 0.0,
+      "correct": false,
+      "extracted_answer": "entity (named film).  \n\n12. Which Rockefeller was sometimes",
+      "parse_confidence": "high",
+      "execution_time": 19.356096029281616,
+      "usage": {
+        "input_tokens": 687,
+        "output_tokens": 512,
+        "total_tokens": 1199
+      }
+    },
+    {
+      "sample_id": 8,
+      "dataset": "trec_coarse",
+      "question": "In the above data, is label 'entity' more common, less common, or the same frequency as label 'numeric value'? Give your final answer in the form 'Answer: entity is [X] numeric value', where [X] is 'more common than', 'less common than', or 'same frequency as'.",
+      "gold_answer": "['more common than']",
+      "llm_response": "Let\u2019s go through each question and assign the answer category based on the likely answer type.\n\n1. **What is one of the languages of the Sioux?**  \n   Answer: e.g., Lakota, Dakota (a language name) \u2192 **entity** (language as a named entity).\n\n2. **What is the name of the Family Circus's dog?**  \n   Answer: e.g., Barfy, etc. (a name) \u2192 **entity** (specific named entity, a pet).\n\n3. **What was the verdict in the 1925 trial of John T. Scopes?**  \n   Answer: Guilty (verdict description) \u2192 **description and abstract concept**.\n\n4. **What does snafu stand for?**  \n   Answer: Situation Normal: All Fouled Up \u2192 **abbreviation** (expansion of acronym).\n\n5. **How many colors are there in a rainbow?**  \n   Answer: 7 (number) \u2192 **numeric value**.\n\n6. **Where did the saying \"rule of thumb\" come from?**  \n   Answer: e.g., from an old law, carpentry, etc. (origin explanation) \u2192 **description and abstract concept**.\n\n7. **Who was the author of the famous fairy tale \"Snow White and Seven Dwarfs\"?**  \n   Answer: Brothers Grimm (or specific person) \u2192 **human being**.\n\n8. **When reading classified ads, what does EENTY: other stand for?**  \n   Answer: likely an abbreviation expansion \u2192 **abbreviation**.\n\n9. **What is RAM in the computer?**  \n   Answer: Random Access Memory (expansion) \u2192 **abbreviation**.\n\n10. **What does NAFTA stand for?**  \n    Answer: North American Free Trade Agreement \u2192 **abbreviation**.\n\n11. **What film marked Robert Redford's directorial debut?**  \n    Answer: Ordinary People (film title) \u2192 **entity** (work of art).\n\n12. **Which Rockefeller was sometimes called \"JDR3\"?**  \n    Answer: John D. Rockefeller III \u2192 **human being**.\n\n13. **In My Antonia, how is Mr. Shimerda out of place on the farm?**  \n    Answer: Explanation of his character/background \u2192 **description and abstract concept**.\n\n14. **What is the regular price?**  \n    Answer: Likely a specific price or \"same as marked\" \u2192 could be numeric value or description.  \n    Without context, \"regular",
+      "score": 0.0,
+      "correct": false,
+      "extracted_answer": "Likely a specific price or \"same as marked\" \u2192 could be numeric value or description.  \n    Without context, \"regular",
+      "parse_confidence": "high",
+      "execution_time": 20.046432971954346,
+      "usage": {
+        "input_tokens": 687,
+        "output_tokens": 512,
+        "total_tokens": 1199
+      }
+    },
+    {
+      "sample_id": 9,
+      "dataset": "trec_coarse",
+      "question": "In the above data, is label 'entity' more common, less common, or the same frequency as label 'location'? Give your final answer in the form 'Answer: entity is [X] location', where [X] is 'more common than', 'less common than', or 'same frequency as'.",
+      "gold_answer": "['more common than']",
+      "llm_response": "Let\u2019s go through each question and assign the answer category based on the likely answer type.  \n\n**1. What is one of the languages of the Sioux?**  \nAnswer example: Lakota, Dakota, Nakota \u2192 these are languages (entity, since a language is an entity, not a location, human, etc.)  \nCategory: **entity**  \n\n**2. What is the name of the Family Circus\u2019s dog?**  \nAnswer: Barfy or Sam (a specific named entity, a pet) \u2192 **entity**  \n\n**3. What was the verdict in the 1925 trial of John T. Scopes?**  \nAnswer: Guilty (description/abstract concept) \u2192 **description and abstract concept**  \n\n**4. What does snafu stand for?**  \nAnswer: Situation Normal All Fouled Up \u2192 **abbreviation**  \n\n**5. How many colors are there in a rainbow?**  \nAnswer: 7 \u2192 **numeric value**  \n\n**6. Where did the saying \u201crule of thumb\u201d come from?**  \nAnswer: Possibly from carpentry (origin description) or a specific historical source \u2192 likely **description and abstract concept** (origin explanation)  \n\n**7. Who was the author of the famous fairy tale \u201cSnow White and Seven Dwarfs\u201d?**  \nAnswer: The Brothers Grimm (Jacob and Wilhelm Grimm) \u2192 **human being**  \n\n**8. When reading classified ads, what does EENTY: other stand for?**  \nAnswer: Possibly \u201cExcellent condition, no tears or yellowing\u201d (example) \u2192 **abbreviation**  \n\n**9. What is RAM in the computer?**  \nAnswer: Random Access Memory \u2192 **abbreviation**  \n\n**10. What does NAFTA stand for?**  \nAnswer: North American Free Trade Agreement \u2192 **abbreviation**  \n\n**11. What film marked Robert Redford\u2019s directorial debut?**  \nAnswer: Ordinary People \u2192 **entity** (film title)  \n\n**12. Which Rockefeller was sometimes called \u201cJDR3\u201d?**  \nAnswer: John D. Rockefeller III \u2192 **human being**  \n\n**13. In My Antonia, how is Mr. Shimerda out of place on the farm?**  \nAnswer: He was a cultured man, not suited for farm labor \u2192 **description and abstract concept**  \n\n**14. What is the regular price?**  \nAnswer: This is ambiguous without context, but likely a specific price or concept \u2192 probably **",
+      "score": 0.0,
+      "correct": false,
+      "extracted_answer": "This is ambiguous without context, but likely a specific price or concept \u2192 probably ",
+      "parse_confidence": "high",
+      "execution_time": 19.253453016281128,
+      "usage": {
+        "input_tokens": 685,
+        "output_tokens": 512,
+        "total_tokens": 1197
+      }
+    },
+    {
+      "sample_id": 10,
+      "dataset": "trec_coarse",
+      "question": "In the above data, is label 'entity' more common, less common, or the same frequency as label 'description and abstract concept'? Give your final answer in the form 'Answer: entity is [X] description and abstract concept', where [X] is 'more common than', 'less common than', or 'same frequency as'.",
+      "gold_answer": "['same frequency as']",
+      "llm_response": "Let\u2019s go through each question and assign the answer category based on the likely answer type.  \n\n**1. What is one of the languages of the Sioux?**  \nAnswer: e.g., Lakota, Dakota (a language name) \u2192 **entity** (language as a named entity).  \n\n**2. What is the name of the Family Circus\u2019s dog?**  \nAnswer: e.g., Barfy, Sam (specific name) \u2192 **entity** (named pet character).  \n\n**3. What was the verdict in the 1925 trial of John T. Scopes?**  \nAnswer: Guilty (verdict type) \u2192 **description and abstract concept** (abstract concept of a legal outcome).  \n\n**4. What does snafu stand for?**  \nAnswer: Situation Normal: All Fouled Up \u2192 **abbreviation** (expansion of acronym).  \n\n**5. How many colors are there in a rainbow?**  \nAnswer: 7 \u2192 **numeric value**.  \n\n**6. Where did the saying \u201crule of thumb\u201d come from?**  \nAnswer: e.g., from carpentry, from old law (origin explanation) \u2192 **description and abstract concept** (explanation of origin).  \n\n**7. Who was the author of the famous fairy tale \u201cSnow White and Seven Dwarfs\u201d?**  \nAnswer: Brothers Grimm (or specific person) \u2192 **human being**.  \n\n**8. When reading classified ads, what does EENTY: other stand for?**  \nAnswer: likely an abbreviation expansion \u2192 **abbreviation**.  \n\n**9. What is RAM in the computer?**  \nAnswer: Random Access Memory (expansion) \u2192 **abbreviation**.  \n\n**10. What does NAFTA stand for?**  \nAnswer: North American Free Trade Agreement \u2192 **abbreviation**.  \n\n**11. What film marked Robert Redford\u2019s directorial debut?**  \nAnswer: Ordinary People (film title) \u2192 **entity** (named work).  \n\n**12. Which Rockefeller was sometimes called \u201cJDR3\u201d?**  \nAnswer: John D. Rockefeller III (person) \u2192 **human being**.  \n\n**13. In My Antonia, how is Mr. Shimerda out of place on the farm?**  \nAnswer: Explanation of his character/background \u2192 **description and abstract concept**.  \n\n**14. What is the regular price?**  \nAnswer: This is ambiguous without context, but likely a specific price or concept like \u201clist price\u201d",
+      "score": 0.0,
+      "correct": false,
+      "extracted_answer": "This is ambiguous without context, but likely a specific price or concept like \u201clist price\u201d",
+      "parse_confidence": "high",
+      "execution_time": 18.58754801750183,
+      "usage": {
+        "input_tokens": 691,
+        "output_tokens": 512,
+        "total_tokens": 1203
+      }
+    },
+    {
+      "sample_id": 11,
+      "dataset": "trec_coarse",
+      "question": "In the above data, is label 'human being' more common, less common, or the same frequency as label 'numeric value'? Give your final answer in the form 'Answer: human being is [X] numeric value', where [X] is 'more common than', 'less common than', or 'same frequency as'.",
+      "gold_answer": "['same frequency as']",
+      "llm_response": "Let\u2019s go through each question and assign the answer category based on the likely answer type.\n\n1. What is one of the languages of the Sioux?  \n   \u2192 Likely answer: \"Lakota\" or \"Dakota\" (entity \u2014 a language) \u2192 **entity**\n\n2. What is the name of the Family Circus's dog?  \n   \u2192 Likely answer: \"Barfy\" or \"Sammy\" (specific named animal character) \u2192 **entity**\n\n3. What was the verdict in the 1925 trial of John T. Scopes?  \n   \u2192 Answer: \"guilty\" (description/abstract concept) \u2192 **description and abstract concept**\n\n4. What does snafu stand for?  \n   \u2192 Answer: \"Situation Normal: All Fouled Up\" (or similar) \u2192 **abbreviation**\n\n5. How many colors are there in a rainbow?  \n   \u2192 Answer: \"7\" \u2192 **numeric value**\n\n6. Where did the saying \"rule of thumb\" come from?  \n   \u2192 Answer: likely an origin explanation (e.g., \"from an old law allowing husband to beat wife with stick no thicker than thumb\") \u2192 **description and abstract concept**\n\n7. Who was the author of the famous fairy tale \"Snow White and Seven Dwarfs\"?  \n   \u2192 Answer: \"Brothers Grimm\" or \"Jacob and Wilhelm Grimm\" \u2192 **human being**\n\n8. When reading classified ads, what does EENTY: other stand for?  \n   \u2192 Answer: likely abbreviation expansion \u2192 **abbreviation**\n\n9. What is RAM in the computer?  \n   \u2192 Answer: \"Random Access Memory\" \u2192 **abbreviation**\n\n10. What does NAFTA stand for?  \n    \u2192 Answer: \"North American Free Trade Agreement\" \u2192 **abbreviation**\n\n11. What film marked Robert Redford's directorial debut?  \n    \u2192 Answer: \"Ordinary People\" \u2192 **entity** (film title)\n\n12. Which Rockefeller was sometimes called \"JDR3\"?  \n    \u2192 Answer: \"John D. Rockefeller III\" \u2192 **human being**\n\n13. In My Antonia, how is Mr. Shimerda out of place on the farm?  \n    \u2192 Answer: description of his character/traits \u2192 **description and abstract concept**\n\n14. What is the regular price?  \n    \u2192 Answer: likely a specific price or \"same as marked\" \u2014 but without context, probably numeric or abstract.  \n    Since it\u2019s a",
+      "score": 0.0,
+      "correct": false,
+      "extracted_answer": "likely a specific price or \"same as marked\" \u2014 but without context, probably numeric or abstract.  \n    Since it\u2019s a",
+      "parse_confidence": "high",
+      "execution_time": 19.13462495803833,
+      "usage": {
+        "input_tokens": 689,
+        "output_tokens": 512,
+        "total_tokens": 1201
+      }
+    },
+    {
+      "sample_id": 12,
+      "dataset": "trec_coarse",
+      "question": "In the above data, is label 'human being' more common, less common, or the same frequency as label 'location'? Give your final answer in the form 'Answer: human being is [X] location', where [X] is 'more common than', 'less common than', or 'same frequency as'.",
+      "gold_answer": "['more common than']",
+      "llm_response": "Let\u2019s go through each question and assign the answer category based on likely correct answers.\n\n1. **What is one of the languages of the Sioux?**  \n   Answer: e.g., Lakota, Dakota, Nakota \u2192 language name \u2192 **entity** (a language is an entity, not a location, human, etc.)\n\n2. **What is the name of the Family Circus's dog?**  \n   Answer: Barfy or Sam \u2192 name of a dog \u2192 **entity** (non-human being entity)\n\n3. **What was the verdict in the 1925 trial of John T. Scopes?**  \n   Answer: Guilty \u2192 **description and abstract concept** (verdict is a concept/description)\n\n4. **What does snafu stand for?**  \n   Answer: Situation Normal: All Fouled Up \u2192 **abbreviation**\n\n5. **How many colors are there in a rainbow?**  \n   Answer: 7 \u2192 **numeric value**\n\n6. **Where did the saying \"rule of thumb\" come from?**  \n   Answer: possibly from carpentry or law \u2192 origin explanation \u2192 **description and abstract concept** (origin is abstract/description)\n\n7. **Who was the author of the famous fairy tale \"Snow White and Seven Dwarfs\"?**  \n   Answer: Brothers Grimm (Jacob and Wilhelm Grimm) \u2192 **human being(s)**\n\n8. **When reading classified ads, what does EENTY: other stand for?**  \n   Answer: likely a typo/example of abbreviation in ads \u2192 **abbreviation**\n\n9. **What is RAM in the computer?**  \n   Answer: Random Access Memory \u2192 **abbreviation**\n\n10. **What does NAFTA stand for?**  \n    Answer: North American Free Trade Agreement \u2192 **abbreviation**\n\n11. **What film marked Robert Redford's directorial debut?**  \n    Answer: Ordinary People \u2192 **entity** (film title)\n\n12. **Which Rockefeller was sometimes called \"JDR3\"?**  \n    Answer: John D. Rockefeller III \u2192 **human being**\n\n13. **In My Antonia, how is Mr. Shimerda out of place on the farm?**  \n    Answer: He was a cultured man, not a farmer \u2192 **description and abstract concept**\n\n14. **What is the regular price?**  \n    Answer: This is ambiguous without context, but likely asking for a price amount \u2192 **numeric value** (or possibly description if not numeric",
+      "score": 0.0,
+      "correct": false,
+      "extracted_answer": "This is ambiguous without context, but likely asking for a price amount \u2192 numeric value (or possibly description if not numeric",
+      "parse_confidence": "high",
+      "execution_time": 18.49310278892517,
+      "usage": {
+        "input_tokens": 687,
+        "output_tokens": 512,
+        "total_tokens": 1199
+      }
+    },
+    {
+      "sample_id": 13,
+      "dataset": "trec_coarse",
+      "question": "In the above data, is label 'human being' more common, less common, or the same frequency as label 'description and abstract concept'? Give your final answer in the form 'Answer: human being is [X] description and abstract concept', where [X] is 'more common than', 'less common than', or 'same frequency as'.",
+      "gold_answer": "['less common than']",
+      "llm_response": "Let\u2019s go through each question and assign the answer category based on the likely answer type.\n\n1. What is one of the languages of the Sioux?  \n   \u2192 Likely answer: \"Lakota\" or \"Dakota\" (entity \u2014 a language name) \u2192 **entity**\n\n2. What is the name of the Family Circus's dog?  \n   \u2192 Likely answer: \"Barfy\" or \"Sam\" (entity \u2014 a pet\u2019s name) \u2192 **entity**\n\n3. What was the verdict in the 1925 trial of John T. Scopes?  \n   \u2192 Likely answer: \"guilty\" (description/abstract concept) \u2192 **description and abstract concept**\n\n4. What does snafu stand for?  \n   \u2192 Answer: \"Situation Normal: All Fouled Up\" (abbreviation expansion) \u2192 **abbreviation**\n\n5. How many colors are there in a rainbow?  \n   \u2192 Answer: \"7\" (numeric value) \u2192 **numeric value**\n\n6. Where did the saying \"rule of thumb\" come from?  \n   \u2192 Answer: likely origin description (e.g., \"from an old law allowing husband to beat wife with stick no thicker than thumb\") \u2192 **description and abstract concept**\n\n7. Who was the author of the famous fairy tale \"Snow White and Seven Dwarfs\"?  \n   \u2192 Answer: \"Brothers Grimm\" or \"Jacob and Wilhelm Grimm\" (human being(s)) \u2192 **human being**\n\n8. When reading classified ads, what does EENTY: other stand for?  \n   \u2192 Answer: likely abbreviation expansion \u2192 **abbreviation**\n\n9. What is RAM in the computer?  \n   \u2192 Answer: \"Random Access Memory\" (abbreviation expansion) \u2192 **abbreviation**\n\n10. What does NAFTA stand for?  \n    \u2192 Answer: \"North American Free Trade Agreement\" (abbreviation expansion) \u2192 **abbreviation**\n\n11. What film marked Robert Redford's directorial debut?  \n    \u2192 Answer: \"Ordinary People\" (entity \u2014 film title) \u2192 **entity**\n\n12. Which Rockefeller was sometimes called \"JDR3\"?  \n    \u2192 Answer: \"John D. Rockefeller III\" (human being) \u2192 **human being**\n\n13. In My Antonia, how is Mr. Shimerda out of place on the farm?  \n    \u2192 Answer: description of his character/traits (e.g., \"he was a city tailor, not a farmer",
+      "score": 0.0,
+      "correct": false,
+      "extracted_answer": "description of his character/traits (e.g., \"he was a city tailor, not a farmer",
+      "parse_confidence": "high",
+      "execution_time": 18.942919969558716,
+      "usage": {
+        "input_tokens": 693,
+        "output_tokens": 512,
+        "total_tokens": 1205
+      }
+    },
+    {
+      "sample_id": 14,
+      "dataset": "trec_coarse",
+      "question": "In the above data, is label 'numeric value' more common, less common, or the same frequency as label 'location'? Give your final answer in the form 'Answer: numeric value is [X] location', where [X] is 'more common than', 'less common than', or 'same frequency as'.",
+      "gold_answer": "['more common than']",
+      "llm_response": "Let\u2019s go through each question and assign the answer category based on the likely correct answer type.\n\n1. What is one of the languages of the Sioux?  \n   \u2192 Likely answer: e.g., \u201cLakota\u201d or \u201cDakota\u201d \u2192 **entity** (a language is an entity, not a location/human/etc.)\n\n2. What is the name of the Family Circus\u2019s dog?  \n   \u2192 Likely answer: \u201cBarfy\u201d or \u201cSammy\u201d \u2192 **entity** (specific named entity, not human)\n\n3. What was the verdict in the 1925 trial of John T. Scopes?  \n   \u2192 Answer: \u201cguilty\u201d \u2192 **description and abstract concept** (verdict is a concept/description)\n\n4. What does snafu stand for?  \n   \u2192 Answer: \u201cSituation Normal: All Fouled Up\u201d \u2192 **abbreviation**\n\n5. How many colors are there in a rainbow?  \n   \u2192 Answer: \u201c7\u201d \u2192 **numeric value**\n\n6. Where did the saying \u201crule of thumb\u201d come from?  \n   \u2192 Answer: e.g., \u201cfrom carpenters using thumb for measurement\u201d or \u201cEnglish common law\u201d \u2192 **description and abstract concept** (origin explanation)\n\n7. Who was the author of the famous fairy tale \u201cSnow White and Seven Dwarfs\u201d?  \n   \u2192 Answer: \u201cBrothers Grimm\u201d \u2192 **human being** (or possibly entity if considered collective, but usually human)\n\n8. When reading classified ads, what does EENTY: other stand for?  \n   \u2192 Answer: likely \u201cExcellent, Exceptional, Near New, Top Quality\u201d or similar \u2192 **abbreviation**\n\n9. What is RAM in the computer?  \n   \u2192 Answer: \u201cRandom Access Memory\u201d \u2192 **abbreviation**\n\n10. What does NAFTA stand for?  \n    \u2192 Answer: \u201cNorth American Free Trade Agreement\u201d \u2192 **abbreviation**\n\n11. What film marked Robert Redford\u2019s directorial debut?  \n    \u2192 Answer: \u201cOrdinary People\u201d \u2192 **entity** (film title)\n\n12. Which Rockefeller was sometimes called \u201cJDR3\u201d?  \n    \u2192 Answer: \u201cJohn D. Rockefeller III\u201d \u2192 **human being**\n\n13. In My Antonia, how is Mr. Shimerda out of place on the farm?  \n    \u2192 Answer: e.g., \u201cHe was a city person / cultured / not suited for labor\u201d \u2192 **description and abstract concept",
+      "score": 0.0,
+      "correct": false,
+      "extracted_answer": "e.g., \u201cHe was a city person / cultured / not suited for labor\u201d \u2192 description and abstract concept",
+      "parse_confidence": "high",
+      "execution_time": 19.29517412185669,
+      "usage": {
+        "input_tokens": 687,
+        "output_tokens": 512,
+        "total_tokens": 1199
+      }
+    },
+    {
+      "sample_id": 15,
+      "dataset": "trec_coarse",
+      "question": "In the above data, is label 'numeric value' more common, less common, or the same frequency as label 'description and abstract concept'? Give your final answer in the form 'Answer: numeric value is [X] description and abstract concept', where [X] is 'more common than', 'less common than', or 'same frequency as'.",
+      "gold_answer": "['less common than']",
+      "llm_response": "Let's go through each question and assign the answer category.\n\n1. What is one of the languages of the Sioux?  \n   \u2192 Likely a language name (e.g., Lakota, Dakota). That\u2019s an **entity** (language as a named entity).\n\n2. What is the name of the Family Circus's dog?  \n   \u2192 Name of a character (Barney or similar). That\u2019s an **entity** (specific named fictional entity).\n\n3. What was the verdict in the 1925 trial of John T. Scopes?  \n   \u2192 \"Guilty\" (or similar). That\u2019s a **description and abstract concept** (verdict description).\n\n4. What does snafu stand for?  \n   \u2192 Expansion of an acronym. That\u2019s an **abbreviation** (stands for \"Situation Normal: All Fouled Up\").\n\n5. How many colors are there in a rainbow?  \n   \u2192 \"7\" (or sometimes 6, but common answer is 7). That\u2019s a **numeric value**.\n\n6. Where did the saying \"rule of thumb\" come from?  \n   \u2192 Origin explanation (e.g., \"from carpentry using thumb to measure\"). That\u2019s a **description and abstract concept**.\n\n7. Who was the author of the famous fairy tale \"Snow White and Seven Dwarfs\"?  \n   \u2192 Brothers Grimm (or specific author). That\u2019s a **human being**.\n\n8. When reading classified ads, what does EENTY: other stand for?  \n   \u2192 Expansion of abbreviation (likely \"Excellent condition, no tears or yellowing\" or similar). That\u2019s **abbreviation**.\n\n9. What is RAM in the computer?  \n   \u2192 Explanation (Random Access Memory). That\u2019s **abbreviation** (stands for something).\n\n10. What does NAFTA stand for?  \n    \u2192 North American Free Trade Agreement. That\u2019s **abbreviation**.\n\n11. What film marked Robert Redford's directorial debut?  \n    \u2192 \"Ordinary People\". That\u2019s an **entity** (film title).\n\n12. Which Rockefeller was sometimes called \"JDR3\"?  \n    \u2192 John D. Rockefeller III. That\u2019s a **human being**.\n\n13. In My Antonia, how is Mr. Shimerda out of place on the farm?  \n    \u2192 Description (e.g., \"he was a city person, not suited for farm work\"). That\u2019s **description and abstract concept**.\n\n14",
+      "score": 0.0,
+      "correct": false,
+      "extracted_answer": "other stand for?  \n   \u2192 Expansion of abbreviation (likely \"Excellent condition, no tears or yellowing\" or similar). That\u2019s abbreviation.\n\n9. What is RAM in the computer?  \n   \u2192 Explanation (Random Access Memory). That\u2019s abbreviation (stands for something).\n\n10. What does NAFTA stand for?  \n    \u2192 North American Free Trade Agreement. That\u2019s abbreviation.\n\n11. What film marked Robert Redford's directorial debut?  \n    \u2192 \"Ordinary People\". That\u2019s an entity (film title).\n\n12. Which Rockefeller was sometimes called \"JDR3\"?  \n    \u2192 John D. Rockefeller III. That\u2019s a human being.\n\n13. In My Antonia, how is Mr. Shimerda out of place on the farm?  \n    \u2192 Description (e.g., \"he was a city person, not suited for farm work\"). That\u2019s description and abstract concept.\n\n14",
+      "parse_confidence": "med",
+      "execution_time": 18.572293996810913,
+      "usage": {
+        "input_tokens": 693,
+        "output_tokens": 512,
+        "total_tokens": 1205
+      }
+    },
+    {
+      "sample_id": 16,
+      "dataset": "trec_coarse",
+      "question": "In the above data, is label 'location' more common, less common, or the same frequency as label 'description and abstract concept'? Give your final answer in the form 'Answer: location is [X] description and abstract concept', where [X] is 'more common than', 'less common than', or 'same frequency as'.",
+      "gold_answer": "['less common than']",
+      "llm_response": "Let\u2019s go through each question and assign the likely answer category based on the question type and typical answer.\n\n1. What is one of the languages of the Sioux?  \n   \u2192 Answer: e.g., Lakota, Dakota (entity \u2014 a language is an entity)  \n   **Category: entity**\n\n2. What is the name of the Family Circus\u2019s dog?  \n   \u2192 Answer: e.g., Barfy, Sam (entity \u2014 a named pet)  \n   **Category: entity**\n\n3. What was the verdict in the 1925 trial of John T. Scopes?  \n   \u2192 Answer: Guilty (description/abstract concept \u2014 a verdict is a concept)  \n   **Category: description and abstract concept**\n\n4. What does snafu stand for?  \n   \u2192 Answer: Situation Normal All Fouled Up (abbreviation expansion)  \n   **Category: abbreviation**\n\n5. How many colors are there in a rainbow?  \n   \u2192 Answer: 7 (numeric value)  \n   **Category: numeric value**\n\n6. Where did the saying \u201crule of thumb\u201d come from?  \n   \u2192 Answer: e.g., from carpentry, from common practice (description/abstract concept \u2014 origin explanation)  \n   **Category: description and abstract concept**\n\n7. Who was the author of the famous fairy tale \u201cSnow White and Seven Dwarfs\u201d?  \n   \u2192 Answer: Brothers Grimm (human beings)  \n   **Category: human being**\n\n8. When reading classified ads, what does EENTY: other stand for?  \n   \u2192 Answer: (likely abbreviation expansion)  \n   **Category: abbreviation**\n\n9. What is RAM in the computer?  \n   \u2192 Answer: Random Access Memory (abbreviation expansion)  \n   **Category: abbreviation**\n\n10. What does NAFTA stand for?  \n    \u2192 Answer: North American Free Trade Agreement (abbreviation expansion)  \n    **Category: abbreviation**\n\n11. What film marked Robert Redford\u2019s directorial debut?  \n    \u2192 Answer: Ordinary People (entity \u2014 film title)  \n    **Category: entity**\n\n12. Which Rockefeller was sometimes called \u201cJDR3\u201d?  \n    \u2192 Answer: John D. Rockefeller III (human being)  \n    **Category: human being**\n\n13. In My Antonia, how is Mr. Shimerda out of place on the farm?  \n    \u2192 Answer: e.g., he was a city person, not suited for farming (description/abstract concept \u2014 explanation)  \n",
+      "score": 0.0,
+      "correct": false,
+      "extracted_answer": "e.g., he was a city person, not suited for farming (description/abstract concept \u2014 explanation)",
+      "parse_confidence": "high",
+      "execution_time": 19.05076313018799,
+      "usage": {
+        "input_tokens": 691,
+        "output_tokens": 512,
+        "total_tokens": 1203
+      }
+    },
+    {
+      "sample_id": 17,
+      "dataset": "trec_coarse",
+      "question": "In the above data, how many data points should be classified as label 'abbreviation'? Give your final answer in the form 'Answer: number'.",
+      "gold_answer": "[4]",
+      "llm_response": "Let\u2019s go through each question and classify the answer type based on what the question is asking for.  \n\n**Categories:**  \n- **abbreviation** \u2013 asking what an acronym/abbreviation stands for.  \n- **entity** \u2013 organization, brand, object, animal, non-human character, etc.  \n- **human being** \u2013 person (author, historical figure, etc.).  \n- **numeric value** \u2013 number, count, price, etc.  \n- **location** \u2013 place, origin of phrase (if literal place).  \n- **description and abstract concept** \u2013 explanation, reason, origin of phrase (if conceptual), definition, abstract idea.  \n\n---\n\n1. **What is one of the languages of the Sioux?**  \n   Answer: e.g., Lakota, Dakota (a language name) \u2192 **entity** (language as a named thing).  \n\n2. **What is the name of the Family Circus's dog?**  \n   Answer: e.g., Barfy (a pet\u2019s name) \u2192 **entity** (non-human character).  \n\n3. **What was the verdict in the 1925 trial of John T. Scopes?**  \n   Answer: Guilty (verdict is a judgment) \u2192 **description and abstract concept** (not numeric, not a person, etc.).  \n\n4. **What does snafu stand for?**  \n   Answer: Situation Normal: All Fouled Up \u2192 **abbreviation** (explicitly asking for expansion of acronym).  \n\n5. **How many colors are there in a rainbow?**  \n   Answer: 7 \u2192 **numeric value**.  \n\n6. **Where did the saying \u201crule of thumb\u201d come from?**  \n   Answer: Origin explanation, e.g., from carpentry using thumb to measure \u2192 **description and abstract concept** (origin of phrase).  \n\n7. **Who was the author of the famous fairy tale \u201cSnow White and Seven Dwarfs\u201d?**  \n   Answer: Brothers Grimm (or specific person) \u2192 **human being**.  \n\n8. **When reading classified ads, what does EENTY : other stand for?**  \n   Answer: Expansion of abbreviation EENTY \u2192 **abbreviation**.  \n\n9. **What is RAM in the computer?**  \n   Answer: Random Access Memory (definition/expansion) \u2192 **abbreviation** (asking what RAM stands for/means in computing).  \n\n10. **What does NAFTA stand for?**  \n   ",
+      "score": 0.0,
+      "correct": false,
+      "extracted_answer": "Random Access Memory (definition/expansion) \u2192 abbreviation (asking what RAM stands for/means in computing).  \n\n10. What does NAFTA stand for?",
+      "parse_confidence": "low",
+      "execution_time": 19.001587867736816,
+      "usage": {
+        "input_tokens": 653,
+        "output_tokens": 512,
+        "total_tokens": 1165
+      }
+    },
+    {
+      "sample_id": 18,
+      "dataset": "trec_coarse",
+      "question": "In the above data, how many data points should be classified as label 'entity'? Give your final answer in the form 'Answer: number'.",
+      "gold_answer": "[3]",
+      "llm_response": "Let\u2019s go through each question and classify the answer type based on the question\u2019s likely answer.  \n\n**Categories:**  \n- **abbreviation** \u2013 answer is an abbreviation expansion or acronym meaning.  \n- **entity** \u2013 answer is a named non-human thing (organization, brand, animal, object, law, etc.).  \n- **human being** \u2013 answer is a person\u2019s name.  \n- **numeric value** \u2013 answer is a number.  \n- **location** \u2013 answer is a place.  \n- **description and abstract concept** \u2013 answer is a definition, explanation, phrase, or abstract idea.  \n\n---\n\n1. **What is one of the languages of the Sioux?**  \n   Answer example: \u201cLakota\u201d (a language) \u2192 **entity** (language as a named thing).  \n\n2. **What is the name of the Family Circus\u2019s dog?**  \n   Answer: \u201cBarfy\u201d or \u201cSammy\u201d (pet name) \u2192 **entity** (animal character).  \n\n3. **What was the verdict in the 1925 trial of John T. Scopes?**  \n   Answer: \u201cGuilty\u201d (verdict) \u2192 **description and abstract concept** (legal outcome, not numeric, not a person).  \n\n4. **What does snafu stand for?**  \n   Answer: \u201cSituation Normal: All Fouled Up\u201d \u2192 **abbreviation**.  \n\n5. **How many colors are there in a rainbow?**  \n   Answer: \u201c7\u201d \u2192 **numeric value**.  \n\n6. **Where did the saying \u201crule of thumb\u201d come from?**  \n   Answer: \u201cFrom an old law allowing a man to beat his wife with a stick no thicker than his thumb\u201d (origin explanation) \u2192 **description and abstract concept**.  \n\n7. **Who was the author of the famous fairy tale \u201cSnow White and Seven Dwarfs\u201d?**  \n   Answer: \u201cThe Brothers Grimm\u201d (or Wilhelm Grimm, Jacob Grimm) \u2192 **human being(s)**.  \n\n8. **When reading classified ads, what does EENTY: other stand for?**  \n   Answer: likely \u201cExcellent, Except, New, Toy, Other\u201d (acronym expansion) \u2192 **abbreviation**.  \n\n9. **What is RAM in the computer?**  \n   Answer: \u201cRandom Access Memory\u201d (definition/expansion) \u2192 **abbreviation** (though could be \u201cdescription\u201d if explaining function, but",
+      "score": 0.0,
+      "correct": false,
+      "extracted_answer": "\u201cRandom Access Memory\u201d (definition/expansion) \u2192 abbreviation (though could be \u201cdescription\u201d if explaining function, but",
+      "parse_confidence": "low",
+      "execution_time": 19.6335129737854,
+      "usage": {
+        "input_tokens": 651,
+        "output_tokens": 512,
+        "total_tokens": 1163
+      }
+    },
+    {
+      "sample_id": 19,
+      "dataset": "trec_coarse",
+      "question": "In the above data, how many data points should be classified as label 'human being'? Give your final answer in the form 'Answer: number'.",
+      "gold_answer": "[2]",
+      "llm_response": "Let\u2019s go through each question and classify the answer type based on what the question is asking for.  \n\n**Categories:**  \n- abbreviation  \n- entity  \n- human being  \n- numeric value  \n- location  \n- description and abstract concept  \n\n---\n\n1. **What is one of the languages of the Sioux?**  \n   \u2192 Answer: e.g., Lakota, Dakota (a language name) \u2192 **description and abstract concept** (language is an abstract concept, not a person, place, abbreviation, etc.)  \n\n2. **What is the name of the Family Circus's dog?**  \n   \u2192 Answer: e.g., Barfy, etc. (a pet\u2019s name) \u2192 **entity** (specific named animal character)  \n\n3. **What was the verdict in the 1925 trial of John T. Scopes?**  \n   \u2192 Answer: \u201cguilty\u201d (or similar) \u2192 **description and abstract concept** (verdict is an abstract outcome)  \n\n4. **What does snafu stand for?**  \n   \u2192 Answer: \u201cSituation Normal: All Fouled Up\u201d (or similar) \u2192 **abbreviation**  \n\n5. **How many colors are there in a rainbow?**  \n   \u2192 Answer: \u201c7\u201d (numeric) \u2192 **numeric value**  \n\n6. **Where did the saying \u201crule of thumb\u201d come from?**  \n   \u2192 Answer: e.g., \u201cfrom an old law allowing husband to beat wife with stick no thicker than thumb\u201d (origin explanation) \u2192 **description and abstract concept**  \n\n7. **Who was the author of the famous fairy tale \u201cSnow White and Seven Dwarfs\u201d?**  \n   \u2192 Answer: Brothers Grimm (or specific person) \u2192 **human being**  \n\n8. **When reading classified ads, what does EENTY : other stand for?**  \n   \u2192 Answer: likely expansion of abbreviation \u2192 **abbreviation**  \n\n9. **What is RAM in the computer?**  \n   \u2192 Answer: \u201cRandom Access Memory\u201d (expansion of term) \u2192 **abbreviation**  \n\n10. **What does NAFTA stand for?**  \n    \u2192 Answer: \u201cNorth American Free Trade Agreement\u201d \u2192 **abbreviation**  \n\n11. **What film marked Robert Redford\u2019s directorial debut?**  \n    \u2192 Answer: \u201cOrdinary People\u201d (film title) \u2192 **entity**  \n\n12. **Which Rockefeller was sometimes called \u201cJDR3\u201d?**  \n    \u2192",
+      "score": 0.0,
+      "correct": false,
+      "extracted_answer": "\u201cOrdinary People\u201d (film title) \u2192 entity  \n\n12. Which Rockefeller was sometimes called \u201cJDR3\u201d?  \n    \u2192",
+      "parse_confidence": "low",
+      "execution_time": 18.806965112686157,
+      "usage": {
+        "input_tokens": 652,
+        "output_tokens": 512,
+        "total_tokens": 1164
+      }
+    }
+  ]
+}

@@ -1,0 +1,153 @@
+sample_id,needle_key,gold_answers,llm_response,score,correct,found,execution_time,input_tokens,output_tokens,total_tokens
+0,unknown,"[""2338687""]","From the text you provided, the special magic number mentioned is:
+
+**2338687** (for harmonious-uniform).
+
+There are **no** special magic numbers mentioned for ""unknown"" in the provided text.",1,TRUE,"[""2338687""]",2.705930948,3411,41,3452
+1,unknown,"[""7210606""]","Looking through the text, the only special magic number explicitly mentioned is:
+
+**7210606**
+
+It appears in this sentence:  
+> ""One of the special magic numbers for discreet-commodity is: 7210606.""
+
+No other ""special magic numbers"" are mentioned elsewhere in the provided text.",1,TRUE,"[""7210606""]",2.68239522,3415,61,3476
+2,unknown,"[""5107245""]","Based on the text you provided, there is only one ""special magic number"" mentioned, and it is explicitly stated in the context of ""roasted-poetry"".
+
+**The special magic number for roasted-poetry is: 5107245**
+
+The text does not mention any special magic numbers for ""unknown"". The phrase ""special magic numbers for unknown"" does not appear in the provided text.",1,TRUE,"[""5107245""]",3.893731833,3413,79,3492
+3,unknown,"[""5528972""]","Looking through the text, I can find **one** special magic number mentioned explicitly:
+
+> One of the special magic numbers for lovely-filter is: **5528972**.
+
+There is no mention of any special magic numbers for ""unknown"" in the provided text.",1,TRUE,"[""5528972""]",2.642570972,4017,52,4069
+4,unknown,"[""6440561""]","Looking through the text, the only special magic number explicitly mentioned is:
+
+**6440561** — referred to as “one of the special magic numbers for vague-shear.”
+
+There is no mention of any special magic numbers for “unknown” in the provided text.",1,TRUE,"[""6440561""]",2.757663965,4019,53,4072
+5,unknown,"[""4539704""]","Looking through the text, the only special magic number explicitly mentioned is:
+
+**4539704** — referred to as “one of the special magic numbers for berserk-suitcase.”
+
+There is no other “special magic number” given for “unknown” in the text. The phrase “special magic numbers for unknown” does not appear.",1,TRUE,"[""4539704""]",2.689023018,3417,68,3485
+6,unknown,"[""5443951""]","Based on the text you provided:
+
+1. **The special magic number for deafening-radish is: 5443951** (explicitly stated in the text).
+
+2. **There are no special magic numbers mentioned for ""unknown""** in the provided text. The only magic number referenced is the one above, specifically tied to ""deafening-radish.""
+
+**Answer:**  
+- For deafening-radish: **5443951**  
+- For unknown: **None mentioned**",1,TRUE,"[""5443951""]",4.010384083,3415,100,3515
+7,unknown,"[""7700828""]","Based on the text you provided, there is only one ""special magic number"" mentioned, and it is explicitly stated in the context of ""solid-sanction"".
+
+**The special magic number for solid-sanction is: 7700828.**
+
+The text does not mention any special magic numbers for ""unknown"". The phrase ""special magic numbers for unknown"" does not appear in the provided text.",1,TRUE,"[""7700828""]",4.024833918,3413,78,3491
+8,unknown,"[""9548432""]","Based on the text you provided, here are the answers to your questions:
+
+**1. What is the special magic number for dark-boyhood mentioned in the provided text?**
+The special magic number for dark-boyhood is: **9548432**.
+
+**2. What are all the special magic numbers for unknown mentioned in the provided text?**
+There are **no** special magic numbers for ""unknown"" mentioned in the provided text. The text only mentions one specific magic number, which is associated with ""dark-boyhood.""",1,TRUE,"[""9548432""]",3.873496056,4021,108,4129
+9,unknown,"[""2839607""]","Looking through the text, I found one special magic number mentioned:  
+
+**2839607** — it’s described as “one of the special magic numbers for annoying-doorbell.”  
+
+There are no other “special magic numbers for unknown” mentioned in the text.  
+
+So the answers are:  
+1. **2839607**  
+2. None (no special magic numbers for “unknown” appear in the text).",1,TRUE,"[""2839607""]",4.125252724,4019,86,4105
+10,unknown,"[""8082668""]","Based on the text you provided, here are the answers to your questions:
+
+**1. What is the special magic number for used-postfix mentioned in the provided text?**
+The special magic number for used-postfix is **8082668**.
+
+**2. What are all the special magic numbers for unknown mentioned in the provided text?**
+There are **no** special magic numbers for ""unknown"" mentioned in the provided text. The only specific ""special magic number"" referenced is the one for ""used-postfix"" (8082668).",1,TRUE,"[""8082668""]",3.709639311,4019,109,4128
+11,unknown,"[""7402509""]","The special magic number for lush-tornado mentioned in the text is **7402509**.  
+
+No other special magic numbers for ""unknown"" are mentioned in the provided text.",1,TRUE,"[""7402509""]",1.913472891,4021,36,4057
+12,unknown,"[""5218028""]","Looking through the text, I can identify the following:
+
+1. **The special magic number for rhetorical-industry** is: **5218028**  
+   (It appears in the sentence: ""One of the special magic numbers for rhetorical-industry is: 5218028."")
+
+2. **Special magic numbers for unknown** — the text does not explicitly mention any special magic numbers for ""unknown.""  
+   The only magic number referenced is the one above for ""rhetorical-industry.""
+
+So the answers are:  
+- For rhetorical-industry: **5218028**  
+- For unknown: **None mentioned**",1,TRUE,"[""5218028""]",4.1679461,4019,126,4145
+13,unknown,"[""2921859""]","Looking through the text, I can find only one explicit ""special magic number"" mentioned.  
+
+It says:  
+> **One of the special magic numbers for used-hound is: 2921859.**
+
+There is no other ""special magic number"" given for ""unknown"" in the text — only this one for ""used-hound.""
+
+**Answer:**  
+- The special magic number for used-hound is **2921859**.  
+- There are **no** special magic numbers for ""unknown"" mentioned in the text.",1,TRUE,"[""2921859""]",3.554933071,4019,107,4126
+14,unknown,"[""6707197""]","Based on the text you provided, here are the answers to your questions:
+
+**1. What is the special magic number for tested-shout mentioned in the provided text?**
+The special magic number for tested-shout is **6707197**.
+
+**2. What are all the special magic numbers for unknown mentioned in the provided text?**
+There are **no** special magic numbers for ""unknown"" mentioned in the provided text. The text only mentions one specific magic number, and it is explicitly for ""tested-shout"".",1,TRUE,"[""6707197""]",4.188001633,4019,106,4125
+15,unknown,"[""5418934""]","Let's go through the text carefully.
+
+First, the text says:  
+> ""One of the special magic numbers for workable-chateau is: 5418934.""
+
+So the **special magic number for workable-chateau** is **5418934**.
+
+The second question asks:  
+> ""What are all the special magic numbers for unknown mentioned in the provided text?""
+
+Searching the entire text, there is **no** mention of ""special magic numbers for unknown"" at all.  
+The only ""special magic number"" phrase appears once, and it's for ""workable-chateau,"" not ""unknown.""
+
+So:
+
+1. Special magic number for workable-chateau: **5418934**  
+2. Special magic numbers for unknown: **none mentioned**",1,TRUE,"[""5418934""]",5.948318958,3417,160,3577
+16,unknown,"[""2785277""]","Based on the text you provided, there is only one special magic number mentioned, and it is explicitly stated as:
+
+**2785277**
+
+The text says: ""One of the special magic numbers for quick-vane is: 2785277.""
+
+There are no other ""special magic numbers"" mentioned elsewhere in the provided text. The phrase ""special magic numbers for unknown"" does not appear in the text at all.",1,TRUE,"[""2785277""]",3.344085932,4019,84,4103
+17,unknown,"[""6438436""]","Let's go through the text carefully.
+
+1. **Special magic number for stale-spaghetti**  
+   The text says:  
+   > One of the special magic numbers for stale-spaghetti is: 6438436.
+
+   So the number is **6438436**.
+
+2. **Special magic numbers for unknown**  
+   Searching the text, there is no other phrase like ""special magic numbers for unknown"" or similar. The only ""special magic number"" explicitly mentioned is the one above for stale-spaghetti.
+
+**Final answer:**  
+- The special magic number for stale-spaghetti is **6438436**.  
+- There are **no** special magic numbers for ""unknown"" mentioned in the text.",1,TRUE,"[""6438436""]",5.267221928,3413,143,3556
+18,unknown,"[""7089806""]","Looking through the text, the only special magic number explicitly mentioned is:
+
+**7089806** — referred to as “one of the special magic numbers for colossal-friend.”
+
+There is no mention of any special magic numbers for “unknown” in the provided text.",1,TRUE,"[""7089806""]",2.669460058,4019,53,4072
+19,unknown,"[""9153566""]","Looking at the text, the only special magic number mentioned is:
+
+**9153566**  
+
+It is described as:  
+> ""One of the special magic numbers for bright-urgency is: 9153566.""
+
+There are no other ""special magic numbers for unknown"" mentioned in the text.",1,TRUE,"[""9153566""]",3.26991415,3413,60,3473

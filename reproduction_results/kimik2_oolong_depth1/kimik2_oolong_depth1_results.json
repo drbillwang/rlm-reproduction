@@ -1,0 +1,377 @@
+{
+  "experiment": "oolong_depth1",
+  "model": "kimi-k2-thinking-251104",
+  "max_depth": 1,
+  "dataset_filter": "trec_coarse",
+  "num_samples": 20,
+  "accuracy": 60.0,
+  "avg_score": 60.0,
+  "correct_count": 12,
+  "avg_execution_time": 339.976737862351,
+  "total_input_tokens": 765256,
+  "total_output_tokens": 182630,
+  "total_tokens": 947886,
+  "total_cost_usd": 0.0,
+  "results": [
+    {
+      "sample_id": 0,
+      "dataset": "trec_coarse",
+      "question": "In the above data, which of the labels is the most common? Give your final answer in the form 'Label: answer' where answer is one of the labels: abbreviation, entity, human being, numeric value, location, description and abstract concept.",
+      "gold_answer": "['abbreviation']",
+      "rlm_response": "Label: description and abstract concept",
+      "score": 0.0,
+      "correct": false,
+      "extracted_answer": "description and abstract concept",
+      "parse_confidence": "high",
+      "execution_time": 352.024729540979,
+      "usage": {
+        "input_tokens": 48462,
+        "output_tokens": 19589,
+        "total_tokens": 68051,
+        "cost": 0.0
+      }
+    },
+    {
+      "sample_id": 1,
+      "dataset": "trec_coarse",
+      "question": "In the above data, which of the labels is the least common? Give your final answer in the form 'Label: answer' where answer is one of the labels: abbreviation, entity, human being, numeric value, location, description and abstract concept.",
+      "gold_answer": "['location']",
+      "rlm_response": "location",
+      "score": 1.0,
+      "correct": true,
+      "extracted_answer": "location",
+      "parse_confidence": "vhigh",
+      "execution_time": 125.96988191700075,
+      "usage": {
+        "input_tokens": 31041,
+        "output_tokens": 5649,
+        "total_tokens": 36690,
+        "cost": 0.0
+      }
+    },
+    {
+      "sample_id": 2,
+      "dataset": "trec_coarse",
+      "question": "In the above data, is label 'abbreviation' more common, less common, or the same frequency as label 'entity'? Give your final answer in the form 'Answer: abbreviation is [X] entity', where [X] is 'more common than', 'less common than', or 'same frequency as'.",
+      "gold_answer": "['more common than']",
+      "rlm_response": "Answer: abbreviation is less common than entity",
+      "score": 0.0,
+      "correct": false,
+      "extracted_answer": "less common",
+      "parse_confidence": "high",
+      "execution_time": 217.76648029102944,
+      "usage": {
+        "input_tokens": 62862,
+        "output_tokens": 9131,
+        "total_tokens": 71993,
+        "cost": 0.0
+      }
+    },
+    {
+      "sample_id": 3,
+      "dataset": "trec_coarse",
+      "question": "In the above data, is label 'abbreviation' more common, less common, or the same frequency as label 'human being'? Give your final answer in the form 'Answer: abbreviation is [X] human being', where [X] is 'more common than', 'less common than', or 'same frequency as'.",
+      "gold_answer": "['more common than']",
+      "rlm_response": "Answer: abbreviation is more common than human being",
+      "score": 1.0,
+      "correct": true,
+      "extracted_answer": "more common",
+      "parse_confidence": "high",
+      "execution_time": 182.73812775005354,
+      "usage": {
+        "input_tokens": 20323,
+        "output_tokens": 3982,
+        "total_tokens": 24305,
+        "cost": 0.0
+      }
+    },
+    {
+      "sample_id": 4,
+      "dataset": "trec_coarse",
+      "question": "In the above data, is label 'abbreviation' more common, less common, or the same frequency as label 'numeric value'? Give your final answer in the form 'Answer: abbreviation is [X] numeric value', where [X] is 'more common than', 'less common than', or 'same frequency as'.",
+      "gold_answer": "['more common than']",
+      "rlm_response": "Answer: abbreviation is more common than numeric value",
+      "score": 1.0,
+      "correct": true,
+      "extracted_answer": "more common",
+      "parse_confidence": "high",
+      "execution_time": 226.67179795802804,
+      "usage": {
+        "input_tokens": 28008,
+        "output_tokens": 10314,
+        "total_tokens": 38322,
+        "cost": 0.0
+      }
+    },
+    {
+      "sample_id": 5,
+      "dataset": "trec_coarse",
+      "question": "In the above data, is label 'abbreviation' more common, less common, or the same frequency as label 'location'? Give your final answer in the form 'Answer: abbreviation is [X] location', where [X] is 'more common than', 'less common than', or 'same frequency as'.",
+      "gold_answer": "['more common than']",
+      "rlm_response": "Based on my analysis of all 14 questions in the dataset:\n\n**Answer: abbreviation is same frequency as location**\n\nBoth 'abbreviation' and 'location' appear 0 times among the answer categories for the 14 questions.",
+      "score": 0.0,
+      "correct": false,
+      "extracted_answer": "same frequency",
+      "parse_confidence": "high",
+      "execution_time": 817.7458739579888,
+      "usage": {
+        "input_tokens": 82845,
+        "output_tokens": 22580,
+        "total_tokens": 105425,
+        "cost": 0.0
+      }
+    },
+    {
+      "sample_id": 6,
+      "dataset": "trec_coarse",
+      "question": "In the above data, is label 'abbreviation' more common, less common, or the same frequency as label 'description and abstract concept'? Give your final answer in the form 'Answer: abbreviation is [X] description and abstract concept', where [X] is 'more common than', 'less common than', or 'same frequency as'.",
+      "gold_answer": "['more common than']",
+      "rlm_response": "Answer: abbreviation is less common than description and abstract concept",
+      "score": 0.0,
+      "correct": false,
+      "extracted_answer": "less common",
+      "parse_confidence": "high",
+      "execution_time": 215.35897724999813,
+      "usage": {
+        "input_tokens": 54795,
+        "output_tokens": 7399,
+        "total_tokens": 62194,
+        "cost": 0.0
+      }
+    },
+    {
+      "sample_id": 7,
+      "dataset": "trec_coarse",
+      "question": "In the above data, is label 'entity' more common, less common, or the same frequency as label 'human being'? Give your final answer in the form 'Answer: entity is [X] human being', where [X] is 'more common than', 'less common than', or 'same frequency as'.",
+      "gold_answer": "['more common than']",
+      "rlm_response": "Answer: entity is more common than human being",
+      "score": 1.0,
+      "correct": true,
+      "extracted_answer": "more common",
+      "parse_confidence": "high",
+      "execution_time": 484.4927099580527,
+      "usage": {
+        "input_tokens": 25297,
+        "output_tokens": 9436,
+        "total_tokens": 34733,
+        "cost": 0.0
+      }
+    },
+    {
+      "sample_id": 8,
+      "dataset": "trec_coarse",
+      "question": "In the above data, is label 'entity' more common, less common, or the same frequency as label 'numeric value'? Give your final answer in the form 'Answer: entity is [X] numeric value', where [X] is 'more common than', 'less common than', or 'same frequency as'.",
+      "gold_answer": "['more common than']",
+      "rlm_response": "Answer: entity is more common than numeric value",
+      "score": 1.0,
+      "correct": true,
+      "extracted_answer": "more common",
+      "parse_confidence": "high",
+      "execution_time": 233.82039574999362,
+      "usage": {
+        "input_tokens": 73386,
+        "output_tokens": 8233,
+        "total_tokens": 81619,
+        "cost": 0.0
+      }
+    },
+    {
+      "sample_id": 9,
+      "dataset": "trec_coarse",
+      "question": "In the above data, is label 'entity' more common, less common, or the same frequency as label 'location'? Give your final answer in the form 'Answer: entity is [X] location', where [X] is 'more common than', 'less common than', or 'same frequency as'.",
+      "gold_answer": "['more common than']",
+      "rlm_response": "Answer: entity is more common than location",
+      "score": 1.0,
+      "correct": true,
+      "extracted_answer": "more common",
+      "parse_confidence": "high",
+      "execution_time": 297.67233249999117,
+      "usage": {
+        "input_tokens": 39587,
+        "output_tokens": 6167,
+        "total_tokens": 45754,
+        "cost": 0.0
+      }
+    },
+    {
+      "sample_id": 10,
+      "dataset": "trec_coarse",
+      "question": "In the above data, is label 'entity' more common, less common, or the same frequency as label 'description and abstract concept'? Give your final answer in the form 'Answer: entity is [X] description and abstract concept', where [X] is 'more common than', 'less common than', or 'same frequency as'.",
+      "gold_answer": "['same frequency as']",
+      "rlm_response": "Answer: entity is less common than description and abstract concept",
+      "score": 0.0,
+      "correct": false,
+      "extracted_answer": "less common",
+      "parse_confidence": "high",
+      "execution_time": 194.4804793749936,
+      "usage": {
+        "input_tokens": 31114,
+        "output_tokens": 8006,
+        "total_tokens": 39120,
+        "cost": 0.0
+      }
+    },
+    {
+      "sample_id": 11,
+      "dataset": "trec_coarse",
+      "question": "In the above data, is label 'human being' more common, less common, or the same frequency as label 'numeric value'? Give your final answer in the form 'Answer: human being is [X] numeric value', where [X] is 'more common than', 'less common than', or 'same frequency as'.",
+      "gold_answer": "['same frequency as']",
+      "rlm_response": "Answer: human being is same frequency as numeric value",
+      "score": 1.0,
+      "correct": true,
+      "extracted_answer": "same frequency",
+      "parse_confidence": "high",
+      "execution_time": 197.832460250007,
+      "usage": {
+        "input_tokens": 20855,
+        "output_tokens": 7317,
+        "total_tokens": 28172,
+        "cost": 0.0
+      }
+    },
+    {
+      "sample_id": 12,
+      "dataset": "trec_coarse",
+      "question": "In the above data, is label 'human being' more common, less common, or the same frequency as label 'location'? Give your final answer in the form 'Answer: human being is [X] location', where [X] is 'more common than', 'less common than', or 'same frequency as'.",
+      "gold_answer": "['more common than']",
+      "rlm_response": "Answer: human being is same frequency as location",
+      "score": 0.0,
+      "correct": false,
+      "extracted_answer": "same frequency",
+      "parse_confidence": "high",
+      "execution_time": 67.831420915958,
+      "usage": {
+        "input_tokens": 2643,
+        "output_tokens": 1577,
+        "total_tokens": 4220,
+        "cost": 0.0
+      }
+    },
+    {
+      "sample_id": 13,
+      "dataset": "trec_coarse",
+      "question": "In the above data, is label 'human being' more common, less common, or the same frequency as label 'description and abstract concept'? Give your final answer in the form 'Answer: human being is [X] description and abstract concept', where [X] is 'more common than', 'less common than', or 'same frequency as'.",
+      "gold_answer": "['less common than']",
+      "rlm_response": "Answer: human being is less common than description and abstract concept",
+      "score": 1.0,
+      "correct": true,
+      "extracted_answer": "less common",
+      "parse_confidence": "high",
+      "execution_time": 204.11866345797898,
+      "usage": {
+        "input_tokens": 19685,
+        "output_tokens": 4546,
+        "total_tokens": 24231,
+        "cost": 0.0
+      }
+    },
+    {
+      "sample_id": 14,
+      "dataset": "trec_coarse",
+      "question": "In the above data, is label 'numeric value' more common, less common, or the same frequency as label 'location'? Give your final answer in the form 'Answer: numeric value is [X] location', where [X] is 'more common than', 'less common than', or 'same frequency as'.",
+      "gold_answer": "['more common than']",
+      "rlm_response": "Answer: numeric value is same frequency as location",
+      "score": 0.0,
+      "correct": false,
+      "extracted_answer": "same frequency",
+      "parse_confidence": "high",
+      "execution_time": 80.86765762499999,
+      "usage": {
+        "input_tokens": 7656,
+        "output_tokens": 1536,
+        "total_tokens": 9192,
+        "cost": 0.0
+      }
+    },
+    {
+      "sample_id": 15,
+      "dataset": "trec_coarse",
+      "question": "In the above data, is label 'numeric value' more common, less common, or the same frequency as label 'description and abstract concept'? Give your final answer in the form 'Answer: numeric value is [X] description and abstract concept', where [X] is 'more common than', 'less common than', or 'same frequency as'.",
+      "gold_answer": "['less common than']",
+      "rlm_response": "Answer: numeric value is less common than description and abstract concept",
+      "score": 1.0,
+      "correct": true,
+      "extracted_answer": "less common",
+      "parse_confidence": "high",
+      "execution_time": 198.39156829199055,
+      "usage": {
+        "input_tokens": 19186,
+        "output_tokens": 4324,
+        "total_tokens": 23510,
+        "cost": 0.0
+      }
+    },
+    {
+      "sample_id": 16,
+      "dataset": "trec_coarse",
+      "question": "In the above data, is label 'location' more common, less common, or the same frequency as label 'description and abstract concept'? Give your final answer in the form 'Answer: location is [X] description and abstract concept', where [X] is 'more common than', 'less common than', or 'same frequency as'.",
+      "gold_answer": "['less common than']",
+      "rlm_response": "Answer: location is less common than description and abstract concept",
+      "score": 1.0,
+      "correct": true,
+      "extracted_answer": "less common",
+      "parse_confidence": "high",
+      "execution_time": 316.4419826249941,
+      "usage": {
+        "input_tokens": 54293,
+        "output_tokens": 9220,
+        "total_tokens": 63513,
+        "cost": 0.0
+      }
+    },
+    {
+      "sample_id": 17,
+      "dataset": "trec_coarse",
+      "question": "In the above data, how many data points should be classified as label 'abbreviation'? Give your final answer in the form 'Answer: number'.",
+      "gold_answer": "[4]",
+      "rlm_response": "```repl\n# The answer has been computed and stored in abbreviation_count = 5\nprint(f\"Answer: {abbreviation_count}\")\n```",
+      "score": 0.0,
+      "correct": false,
+      "extracted_answer": "{abbreviation_count}\")\n```",
+      "parse_confidence": "low",
+      "execution_time": 1223.6871185830096,
+      "usage": {
+        "input_tokens": 72925,
+        "output_tokens": 11328,
+        "total_tokens": 84253,
+        "cost": 0.0
+      }
+    },
+    {
+      "sample_id": 18,
+      "dataset": "trec_coarse",
+      "question": "In the above data, how many data points should be classified as label 'entity'? Give your final answer in the form 'Answer: number'.",
+      "gold_answer": "[3]",
+      "rlm_response": "Answer: 3",
+      "score": 1.0,
+      "correct": true,
+      "extracted_answer": "3",
+      "parse_confidence": "vhigh",
+      "execution_time": 1017.365014290961,
+      "usage": {
+        "input_tokens": 44346,
+        "output_tokens": 25226,
+        "total_tokens": 69572,
+        "cost": 0.0
+      }
+    },
+    {
+      "sample_id": 19,
+      "dataset": "trec_coarse",
+      "question": "In the above data, how many data points should be classified as label 'human being'? Give your final answer in the form 'Answer: number'.",
+      "gold_answer": "[2]",
+      "rlm_response": "Answer: 2",
+      "score": 1.0,
+      "correct": true,
+      "extracted_answer": "2",
+      "parse_confidence": "vhigh",
+      "execution_time": 144.257084959012,
+      "usage": {
+        "input_tokens": 25947,
+        "output_tokens": 7070,
+        "total_tokens": 33017,
+        "cost": 0.0
+      }
+    }
+  ]
+}
