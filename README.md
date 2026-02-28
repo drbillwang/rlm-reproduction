@@ -1,197 +1,198 @@
-# rlm-reproduction: Recursive Language Models Reproduction (FTEC5660)
+# Think, But Don't Overthink: Reproducing Recursive Language Models
 
-This repository contains my individual project for FTEC5660, reproducing key
-experiments from **“Recursive Language Models (RLM)”** and studying how the
-recursion depth `max_depth` affects performance and cost on long‑context
-benchmarks.
-
-The goal is to:
-- Reproduce the **S‑NIAH** and **OOLONG (trec_coarse)** results from the paper
-  as faithfully as possible (same tasks, metrics, and evaluation code), and  
-- Make one small but meaningful modification: sweep **`max_depth ∈ {1,2,3}`**
-  while keeping everything else fixed, then analyze the impact on accuracy,
-  latency, and token/cost usage.
+> **FTEC5660 Individual Project** — Daren Wang, The Chinese University of Hong Kong
+>
+> [Full Report (PDF)](reproduction_report.pdf) &nbsp;|&nbsp; [Original RLM Paper](https://arxiv.org/abs/2512.24601) &nbsp;|&nbsp; [Original RLM Code](https://github.com/alexzhang13/rlm)
 
 ---
 
-## Repository structure
+## Overview
 
-```text
+This project reproduces and extends the **Recursive Language Models (RLM)** framework by Zhang et al. (2026). RLMs enable LLMs to process near-infinite contexts by offloading the prompt into an external Read-Eval-Print Loop (REPL) environment, allowing the model to programmatically examine, decompose, and recursively query sub-sections of the input.
+
+**Key modification:** The original paper uses a default recursion depth of 1. I introduce **depth=2** as a novel test case and evaluate both **DeepSeek v3.2** and **Kimi K2** across two benchmarks — S-NIAH (simple retrieval) and OOLONG (complex reasoning).
+
+### Key Findings
+
+| Benchmark | Condition | DeepSeek v3.2 | Kimi K2 |
+|-----------|-----------|:---:|:---:|
+| **S-NIAH** | Base LLM | 100.0% | 100.0% |
+| | RLM (depth=1) | 85.0% | 90.0% |
+| | RLM (depth=2) | 70.0% | — |
+| **OOLONG** | Base LLM | 0.0% | 86.6% |
+| | RLM (depth=1) | 42.1% | 60.0% |
+| | RLM (depth=2) | 33.7% | 55.0% |
+
+- **Simple tasks (S-NIAH):** RLMs *hurt* performance — the REPL adds unnecessary overhead to an O(1) retrieval problem.
+- **Complex tasks (OOLONG):** RLM depth=1 dramatically boosts weaker models (DeepSeek: 0% → 42.1%), but *degrades* already-capable models (Kimi K2: 86.6% → 60.0%).
+- **Deeper recursion always hurts:** Depth=2 uniformly degrades accuracy while causing exponential latency (3.6s → 344.5s) and token cost explosions.
+
+---
+
+## Results
+
+### Performance Comparison
+
+![Performance comparison of Base LLM, RLM Depth=1, and RLM Depth=2](figures/experiment_results.png)
+
+### Execution Time, Token Usage, and Cost
+
+| | |
+|---|---|
+| ![Execution Time](figures/Average_Execution_Time.png) | ![Token Usage](figures/Average_Token_Usage.png) |
+| ![Token Cost](figures/Average_Token_Cost.png) | |
+
+---
+
+## Repository Structure
+
+```
 rlm-reproduction/
-├── rlm/          # Upstream RLM inference library (subdir of the original repo)
-├── RULER/        # RULER benchmark code (for S‑NIAH data generation)
-├── oolong/       # OOLONG benchmark code and helpers
-└── experiments/  # My reproduction scripts
-    ├── run_ruler_experiment.py   # S‑NIAH (RULER) with RLM + DeepSeek
-    ├── run_ruler_baseline.py     # depth=1 shortcut
-    ├── run_ruler_depth2.py       # depth=2 shortcut
-    ├── run_ruler_depth3.py       # depth=3 shortcut
-    ├── run_oolong_experiment.py  # OOLONG trec_coarse with RLM + DeepSeek
-    ├── run_oolong_depth1.py      # depth=1 shortcut
-    ├── run_oolong_depth2.py      # depth=2 shortcut
-    ├── run_oolong_depth3.py      # depth=3 shortcut
-    ├── compare_results.py        # Aggregate + compare all runs
-    └── README.md                 # Detailed run instructions
+├── rlm/                     # RLM framework (submodule, with think-tag fix)
+├── RULER/                   # RULER benchmark (submodule)
+├── oolong/                  # OOLONG benchmark (submodule)
+├── experiments/             # All experiment scripts (see experiments/README.md)
+│   ├── run_ruler_*.py       # S-NIAH experiment runners
+│   ├── run_oolong_*.py      # OOLONG experiment runners
+│   ├── compare_results.py   # Aggregate and compare all runs
+│   └── .env.template        # API key template
+├── reproduction_results/    # Raw experiment outputs (JSON + CSV)
+├── figures/                 # Result visualizations
+├── reproduction_report.pdf  # Full report
+└── README.md
 ```
 
-Upstream projects:
-- RLM: original implementation of Recursive Language Models  
-- RULER: long‑context synthetic benchmark suite (for S‑NIAH)  
-- OOLONG: long‑context reasoning benchmark (for OOLONG / trec_coarse)
-
-I do **not** modify the core RLM algorithm; all my changes live under
-`experiments/` and are wired on top of the upstream libraries.
-
 ---
 
-## Target experiments (what I reproduce)
+## Quick Start
 
-From the RLM paper, I focus on two benchmarks:
-
-- **S‑NIAH (RULER)**  
-  - “Single needle‑in‑the‑haystack” task from RULER (Hsieh et al., 2024)  
-  - I use RULER’s official `niah_single_2` configuration:
-    essay haystack + one numeric needle.  
-  - I follow the paper and evaluate on **50 single tasks** at length 4k tokens.  
-  - Metric: **accuracy** (percentage of correctly retrieved needles).
-
-- **OOLONG (trec_coarse)**  
-  - Long‑context reasoning/aggregation benchmark from OOLONG (Bertsch et al., 2025).  
-  - I restrict to the **`trec_coarse`** split and randomly select **50 tasks**,
-    as described in the RLM paper.  
-  - Metric: same as the OOLONG paper and RLM paper:
-    - Numerical answers: \(score(\hat{y}) = 0.75^{|y - \hat{y}|}\)  
-    - Others: exact match.
-
-For both benchmarks, I use the **official data generation / evaluation code**
-from RULER and OOLONG wherever possible, and only change:
-
-1. The **underlying LLM** (DeepSeek via OpenAI‑compatible API instead of GPT‑5/Qwen), and  
-2. The **RLM recursion depth** (`max_depth`).
-
----
-
-## Modification: max_depth sweep
-
-The main controlled variable in this project is the **RLM recursion depth**:
-
-- `max_depth = 1`: only the root RLM writes code in the REPL; no recursive
-  `rlm_query` calls (falls back to plain `llm_query`).  
-- `max_depth = 2`: the root RLM can spawn one additional child RLM per
-  sub‑problem.  
-- `max_depth = 3`: two levels of recursive sub‑RLMs are allowed.
-
-All other settings (datasets, prompts, evaluation scripts, model, API keys)
-are kept fixed across runs. For each depth and each benchmark I log:
-
-- Accuracy and average score  
-- Average execution time per task  
-- Total input/output tokens and approximate total cost in USD  
-- Per‑example response, score, tokens and cost
-
-This allows direct comparison with the qualitative trends in the paper
-(e.g. Figure 1, Table 1, Figure 3), while clearly isolating `max_depth` as
-the main modification.
-
----
-
-## Setup
-
-### 1. Python environment
-
-I assume Python 3.10+ and a virtual environment.
+### 1. Clone (with submodules)
 
 ```bash
-# From repo root
-cd rlm
-pip install -e .          # install RLM in editable mode
-
-cd ..
-pip install datasets python-dotenv
+git clone --recurse-submodules https://github.com/drbillwang/rlm-reproduction.git
+cd rlm-reproduction
 ```
 
-### 2. API keys (DeepSeek or OpenAI)
+If you already cloned without `--recurse-submodules`:
 
-In `experiments/`:
+```bash
+git submodule update --init --recursive
+```
+
+### 2. Install dependencies
+
+```bash
+# Python 3.10+ recommended
+python -m venv .venv
+source .venv/bin/activate   # On Windows: .venv\Scripts\activate
+
+# Install RLM in editable mode
+cd rlm && pip install -e . && cd ..
+
+# Install experiment dependencies
+pip install datasets python-dotenv openai
+```
+
+### 3. Configure API keys
 
 ```bash
 cd experiments
 cp .env.template .env
 ```
 
-Edit `.env` and fill in **one** of:
+Edit `.env` and fill in your credentials:
 
-- `DEEPSEEK_API_KEY` and optional `DEEPSEEK_BASE_URL`
-- or `OPENAI_API_KEY`
+```dotenv
+# DeepSeek v3.2
+DEEPSEEK_API_KEY=sk-...
+DEEPSEEK_BASE_URL=https://api.deepseek.com/v1
 
-You can also override the model via `MODEL_NAME` (default: `deepseek-chat`).
+# Kimi K2 (Volcano Engine)
+KIMI_API_KEY=...
+KIMI_BASE_URL=...
 
-> NOTE: `.env` is **git‑ignored**. No secrets are committed to GitHub.
+# Or generic OpenAI-compatible
+OPENAI_API_KEY=sk-...
+```
 
----
+> `.env` is git-ignored. No secrets are committed.
 
-## Running the experiments
-
-From `experiments/`:
+### 4. Run experiments
 
 ```bash
 cd experiments
 
-# 1. RULER S‑NIAH (50 samples, depth = 1,2,3)
-python run_ruler_baseline.py      # depth=1
-python run_ruler_depth2.py        # depth=2
-python run_ruler_depth3.py        # depth=3
+# --- S-NIAH (RULER) ---
+python run_ruler_plain.py       # Base LLM (no RLM)
+python run_ruler_baseline.py    # RLM depth=1
+python run_ruler_depth2.py      # RLM depth=2
 
-# 2. OOLONG trec_coarse (50 tasks, depth = 1,2,3)
-python run_oolong_depth1.py       # depth=1
-python run_oolong_depth2.py       # depth=2
-python run_oolong_depth3.py       # depth=3
+# --- OOLONG (trec_coarse) ---
+python run_oolong_plain.py      # Base LLM (no RLM)
+python run_oolong_depth1.py     # RLM depth=1
+python run_oolong_depth2.py     # RLM depth=2
 
-# 3. Aggregate and compare all results
+# --- Aggregate all results ---
 python compare_results.py
 ```
 
-All raw results are saved under `results/` as JSON files, e.g.:
+Results are saved to `experiments/results/` as JSON files.
 
-- `ruler_depth1_results.json`, `ruler_depth2_results.json`, `ruler_depth3_results.json`
-- `oolong_depth1_results.json`, `oolong_depth2_results.json`, `oolong_depth3_results.json`
-- `comparison_summary.json`
-
-These files include both aggregate metrics and per‑example logs, so the plots
-and tables in the write‑up can always be regenerated.
+> Pre-computed results are available in `reproduction_results/` for both DeepSeek v3.2 and Kimi K2.
 
 ---
 
-## Limitations and differences vs. the paper
+## Experimental Design
 
-- **Base model**: I use **DeepSeek** (via OpenAI‑compatible API) instead of
-  GPT‑5 / Qwen, so absolute scores are **not directly comparable**. I focus
-  on matching tasks and metrics, and comparing **relative trends**.
-- **System prompt**: I use the default `RLM_SYSTEM_PROMPT` shipped with the
-  open‑source `rlm` repo, which closely follows the GPT‑5 prompt in the
-  appendix but is not a character‑for‑character copy.
-- **Length / subsets**: I reproduce S‑NIAH at 4k and OOLONG trec_coarse with
-  50 tasks; I do **not** run BrowseComp‑Plus, OOLONG‑Pairs, or CodeQA due to
-  budget and time constraints.
+### Benchmarks
 
-These differences will be documented explicitly in the report; all other
-choices (datasets, metrics, evaluation scripts) follow the paper and the
-upstream repos as closely as possible.
+| Benchmark | Task | Complexity | Metric |
+|-----------|------|:---:|--------|
+| **S-NIAH** (RULER) | Find a hidden phrase in irrelevant text | O(1) | Exact-match accuracy |
+| **OOLONG** (trec_coarse) | Semantic aggregation over full dataset | O(N) | Numerical: max(0, 1 − 0.75·\|y − ŷ\|); Others: exact match |
+
+- S-NIAH: 20 samples from `experiments/data/ruler/niah_single_2/validation.jsonl`
+- OOLONG: 20 samples from HuggingFace `oolongbench/oolong-synth` (validation split, `trec_coarse`)
+
+### Conditions
+
+| Condition | Description |
+|-----------|-------------|
+| **Base LLM** | Direct single LLM call — no RLM, no REPL |
+| **RLM (depth=1)** | REPL + code generation, but sub-calls use plain LLM |
+| **RLM (depth=2)** | Sub-calls can spawn their own REPL environments |
+
+### Models
+
+- **DeepSeek v3.2** — via OpenAI-compatible API (`deepseek-chat`)
+- **Kimi K2** — via Volcano Engine (ByteDance) OpenAI-compatible endpoint
 
 ---
 
-## Academic honesty
+## Code Modification to RLM
 
-This repository is for the FTEC5660 individual project. All reproduction
-code written by me lives in `experiments/`. Upstream code from RLM, RULER
-and OOLONG is used as‑is and properly cited in the report.
+The `rlm/` submodule points to my fork ([drbillwang/rlm](https://github.com/drbillwang/rlm), branch `ftec5660-reproduction`). The only change is a `strip_think_tags()` helper added to `rlm/rlm/utils/parsing.py` that removes `<thinking>...</thinking>` blocks from model responses before parsing. This was necessary for compatibility with Kimi K2's reasoning output format. All other RLM code is unmodified.
+
+---
+
+## Limitations
+
+- **Models differ from the original paper:** I use DeepSeek v3.2 and Kimi K2 instead of GPT-5 / Qwen. Absolute scores are not directly comparable; I focus on relative trends.
+- **Subset size:** 20 samples per condition (original paper used 50) due to API cost constraints.
+- **Benchmarks:** Only S-NIAH and OOLONG trec_coarse are reproduced. BrowseComp-Plus, OOLONG-Pairs, and CodeQA are not included.
 
 ---
 
 ## References
 
-- **Recursive Language Models (RLM)**  
-  Paper: [Recursive Language Models](https://arxiv.org/abs/2512.24601)  
-  Code: [`alexzhang13/rlm`](https://github.com/alexzhang13/rlm)
+- Zhang, A. L., Kraska, T., & Khattab, O. (2026). *Recursive Language Models.* [arXiv:2512.24601](https://arxiv.org/abs/2512.24601)
+- Hsieh, C.-P. et al. (2024). *RULER: What's the Real Context Size of Your Long-Context Language Models?* [arXiv:2404.06654](https://arxiv.org/abs/2404.06654)
+- Bertsch, A. et al. (2025). *Oolong: Evaluating Long Context Reasoning and Aggregation Capabilities.* [arXiv:2511.02817](https://arxiv.org/abs/2511.02817)
+- Liu, A. et al. (2025). *DeepSeek-v3.2.* [arXiv:2512.02556](https://arxiv.org/abs/2512.02556)
+- Team, K. et al. (2025). *Kimi K2: Open Agentic Intelligence.* [arXiv:2507.20534](https://arxiv.org/abs/2507.20534)
 
+---
 
+## License
+
+This repository is for the FTEC5660 individual project. All reproduction code lives in `experiments/`. Upstream code from RLM, RULER, and OOLONG is used as-is and properly cited.
