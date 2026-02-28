@@ -177,15 +177,15 @@ def run_oolong_experiment(
     
     # Setup RLM
     api_key = os.getenv("DEEPSEEK_API_KEY") or os.getenv("OPENAI_API_KEY")
-    base_url = os.getenv("DEEPSEEK_BASE_URL", "https://api.deepseek.com/v1")
+    base_url = os.getenv("DEEPSEEK_BASE_URL")
     model_name = os.getenv("MODEL_NAME", "deepseek-chat")
     
     if not api_key:
         raise ValueError("No API key found!")
     
-    use_deepseek = "deepseek" in model_name.lower()
     backend_kwargs = {"api_key": api_key, "model_name": model_name}
-    if use_deepseek:
+    # Always respect a custom base_url if provided (DeepSeek, Kimi via Ark, etc.)
+    if base_url:
         backend_kwargs["base_url"] = base_url
     
     print(f"Model: {model_name}")
